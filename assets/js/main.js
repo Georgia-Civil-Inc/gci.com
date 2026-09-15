@@ -242,6 +242,14 @@ function flipCardsOnScroll() {
 
 document.addEventListener('DOMContentLoaded', () => {
   mountChrome();
+  // Fade body in after chrome is mounted to eliminate flash
+  document.body.style.opacity = '0';
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.body.style.transition = 'opacity .18s ease';
+      document.body.style.opacity = '1';
+    });
+  });
   heroCarousel();
   formHandler();
   flipCardsOnScroll();
