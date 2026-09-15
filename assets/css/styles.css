@@ -160,7 +160,6 @@ section { padding-block: clamp(56px, 9vw, 120px); }
 /* ── Anti-flash / layout stability ── */
 [data-header] { display: block; height: 72px; }
 [data-footer] { display: block; min-height: 200px; }
-body { opacity: 1; }
 
 /* Ensure SVG animations don't cause layout shift */
 .lp-sp, .ls-contour-anim, .ce-grading, .about-hero-topo {
