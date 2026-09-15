@@ -157,6 +157,17 @@ section { padding-block: clamp(56px, 9vw, 120px); }
 .scroll-cue:hover { color: #fff; }
 @keyframes bob { 0%,100%{ transform: translate(-50%,0);} 50%{ transform: translate(-50%,8px);} }
 
+/* ── Anti-flash / layout stability ── */
+[data-header] { display: block; height: 72px; }
+[data-footer] { display: block; min-height: 200px; }
+body { opacity: 1; }
+
+/* Ensure SVG animations don't cause layout shift */
+.lp-sp, .ls-contour-anim, .ce-grading, .about-hero-topo {
+  will-change: opacity;
+  contain: layout style;
+}
+
 /* page hero */
 .page-hero { background: var(--red); color: #fff; position: relative; overflow: hidden;
   background-image: repeating-linear-gradient(135deg, rgba(255,255,255,.04) 0 1px, transparent 1px 16px); }
