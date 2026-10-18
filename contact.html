@@ -82,7 +82,7 @@
     <div class="wrap">
       <span class="eyebrow">Get in touch</span>
       <h1>Start a Conversation.</h1>
-      <p class="sub">The earlier we're involved, the more value we protect. Tell us about your project and the right person will follow up.</p>
+      <p class="sub">Tell us about your project. We will connect you with the appropriate member of our team.</p>
     </div>
   </section>
 
@@ -109,7 +109,8 @@
       <div class="contact-context">
         <span class="eyebrow">Contact</span>
         <h2>Tell Us About Your Site.</h2>
-        <p>Select a discipline and a principal will follow up promptly.</p>
+        <p>A conversation now can help you understand the decisions ahead.</p>
+        <p style="font-size:.85rem;color:var(--gray);margin-top:-8px;">Select any services you need, or choose Not sure yet. Our team will follow up promptly.</p>
         <div class="disc-selector" id="disc-selector" role="group" aria-label="Select disciplines">
           <div class="disc-option">
             <div class="disc-option-inner">
@@ -129,12 +130,19 @@
               <label for="disc-ls" class="disc-label">Land Surveying</label>
             </div>
           </div>
+          <div class="disc-option">
+            <div class="disc-option-inner">
+              <input type="checkbox" id="disc-ns" name="discipline" value="Not sure yet" class="disc-check">
+              <label for="disc-ns" class="disc-label">Not sure yet</label>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="contact-form-wrap">
         <form class="contact-fields" id="contact-form">
           <input type="hidden" id="form-to" name="to" value="chelsea@georgiacivil.com">
+          <input type="hidden" id="form-subject" name="subject" value="New inquiry — Georgia Civil">
           <input type="hidden" id="form-discipline" name="discipline" value="">
 
           <div class="form-row">
@@ -169,8 +177,8 @@
         </form>
 
         <div class="form-success" id="form-success" style="display:none">
-          <strong>Message sent.</strong>
-          Thank you, a member of the Georgia Civil team will be in touch shortly. If your matter is urgent, call us directly at <a href="tel:+17063421104" style="color:var(--red);">706-342-1104</a>.
+          <strong>Thank you.</strong>
+          Your message has been received. A member of our team will follow up. If your matter is urgent, call <a href="tel:+17063421104" style="color:var(--red);">706-342-1104</a>.
         </div>
       </div>
     </div>
@@ -191,9 +199,9 @@
 
       function updateDisciplines() {
         var selected = checks.filter(function(c){ return c.checked; }).map(function(c){ return c.value; });
-        var label = selected.length ? selected.join(', ') : 'General';
-        subjField.value = 'New inquiry \u2014 ' + label + ' \u2014 Georgia Civil';
-        discField.value = label;
+        var label = selected.length ? selected.join(', ') : 'Not sure yet';
+        if (subjField) subjField.value = 'New inquiry \u2014 ' + label + ' \u2014 Georgia Civil';
+        if (discField) discField.value = label;
         // Collect unique recipients for all checked disciplines
         var emails = [];
         selected.forEach(function(disc) {
@@ -208,6 +216,18 @@
       checks.forEach(function (cb) {
         cb.addEventListener('change', updateDisciplines);
       });
+
+      /* ── Pre-select a discipline from a query param, e.g. ?service=Land%20Planning ── */
+      (function preselectFromQuery() {
+        try {
+          var params = new URLSearchParams(window.location.search);
+          var svc = params.get('service');
+          if (!svc) return;
+          var match = checks.filter(function(c){ return c.value.toLowerCase() === svc.toLowerCase(); })[0];
+          if (match) { match.checked = true; }
+        } catch (e) { /* no-op if URLSearchParams unsupported */ }
+        updateDisciplines();
+      })();
 
       var form      = document.getElementById('contact-form');
       var success   = document.getElementById('form-success');
@@ -233,7 +253,7 @@
             } else { throw new Error(out.message || 'failed'); }
           } catch (err) {
             if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send Message \u2192'; }
-            errEl.textContent = 'Something went wrong. Please try again or call 706-342-1104.';
+            errEl.textContent = 'Your message could not be sent. Please try again or call 706-342-1104.';
             errEl.style.display = 'block';
           }
         });
