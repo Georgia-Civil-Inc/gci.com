@@ -32,7 +32,8 @@
     .sv-hero .hero-text::after { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(135deg, rgba(255,255,255,.04) 0 1px, transparent 1px 16px); pointer-events: none; z-index: 0; }
     .sv-hero .hero-text > * { position: relative; z-index: 1; }
     .sv-hero .eyebrow { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: #ffffff; font-weight: 600; }
-    .sv-hero h1 { font-size: 2.25rem; font-weight: 700; color: #fff; line-height: 1.15; }
+    .sv-hero .eyebrow { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: #ffffff; font-weight: 700; font-family: 'Roboto', sans-serif; margin-bottom: .35rem; display: block; }
+    .sv-hero h1 { font-size: clamp(2.1rem, 5vw, 2.8rem); font-weight: 700; color: #fff; line-height: 1.1; letter-spacing: -.01em; }
     .sv-hero .vp { font-size: 1.05rem; color: rgba(255,255,255,.7); line-height: 1.5; }
     .sv-hero .d { font-size: .875rem; color: rgba(255,255,255,.45); line-height: 1.65; }
 
@@ -46,14 +47,14 @@
     .stat-strip-item .lbl { font-size: .72rem; color: #ffffff; text-transform: uppercase; letter-spacing: .07em; }
 
     /* CTA button */
-    .btn-card-accent { display: inline-block; background: #020534; color: #fff; text-decoration: none; padding: .6rem 1.25rem; border-radius: 6px; font-size: .875rem; font-weight: 600; width: fit-content; }
+    .btn-card-accent { display: inline-block; background: #020534; color: #fff; text-decoration: none; padding: .55rem 1.2rem; border-radius: 4px; font-size: .74rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; font-family: 'Roboto', sans-serif; width: fit-content; }
     .btn-card-accent:hover { background: #0a0f57; }
 
     /* Section shell */
     .cardx2-sec { background: #CA2131; border-radius: 10px; padding: 1.75rem 2rem; margin-bottom: 0; color: #fff; }
-    .cardx2-eyebrow { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #ffffff; font-weight: 600; margin-bottom: .4rem; }
+    .cardx2-eyebrow { font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: #ffffff; font-weight: 700; font-family: 'Roboto', sans-serif; margin-bottom: .35rem; }
     .cardx2-eyebrow.red { color: #ffffff; }
-    .cardx2-sec h2 { font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 1.75rem; }
+    .cardx2-sec h2 { font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 1.75rem; line-height: 1.2; }
 
     /* NAVY DIVIDER */
     .cardx2-divider { display: flex; align-items: center; margin: .65rem 0; }
@@ -81,7 +82,7 @@
     .advantage-band { background: rgba(0,0,0,.15); border: 1px solid rgba(255,255,255,.12); border-radius: 10px; padding: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; position: relative; overflow: hidden; }
     .advantage-band::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(135deg, rgba(255,255,255,.055) 0 1px, transparent 1px 12px); pointer-events: none; }
     .advantage-band > * { position: relative; z-index: 1; }
-    .advantage-band h2 { font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+    .advantage-band h2 { font-size: 1.4rem; font-weight: 700; color: #fff; margin-bottom: 1rem; line-height: 1.2; }
     .flow-steps { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; margin-top: .5rem; }
     .step-pill { background: rgba(255,255,255,.15); color: rgba(255,255,255,.85); padding: .3rem .9rem; border-radius: 20px; font-size: .78rem; font-weight: 600; }
     .arrow-sep { color: #ffffff; font-size: .85rem; font-weight: 700; }
@@ -112,7 +113,7 @@
     .cta-band2 { background: rgba(0,0,0,.15); border: 1px solid rgba(255,255,255,.12); border-radius: 10px; padding: 2.75rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; position: relative; overflow: hidden; }
     .cta-band2::after { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(135deg, rgba(255,255,255,.04) 0 1px, transparent 1px 16px); pointer-events: none; z-index: 0; }
     .cta-band2 > * { position: relative; z-index: 1; }
-    .cta-band2 h2 { font-size: 1.5rem; font-weight: 700; color: #fff; margin: .35rem 0 1rem; }
+    .cta-band2 h2 { font-size: 1.4rem; font-weight: 700; color: #fff; margin: .35rem 0 1rem; line-height: 1.2; }
     .cta-meta { display: flex; flex-direction: column; gap: .9rem; }
     .cta-meta .lab { font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.4); display: block; margin-bottom: .15rem; }
     .cta-meta a, .cta-meta span { color: rgba(255,255,255,.8); font-size: .875rem; text-decoration: none; }
@@ -193,25 +194,24 @@
     <section class="reveal" id="rv0">
       <div class="sv-hero">
         <div class="hero-text">
-          <span class="eyebrow">Accurate Project Data</span>
-          <h1>Land Surveying</h1>
-          <p class="vp">Accurate Data That Drives Every Decision.</p>
-          <p class="d">Reliable field data and project control that every downstream planning and engineering decision depends on.</p>
-          <a class="btn-card-accent" href="contact.html">Talk With Our Team &rarr;</a>
+          <span class="eyebrow">Land Surveying</span>
+          <h1>Accurate Data.<br>Confident Decisions.</h1>
+          <p class="d">With more than 30 years of experience in land surveying, detailed construction layout, development services, and property legal matters, our team has the knowledge to handle a wide range of surveying needs. We pair that experience with modern surveying technology to deliver accurate, informative results with a level of detail and clarity that goes beyond the survey itself.</p>
+          <a class="btn-card-accent" href="contact.html?service=Land%20Surveying">Discuss Your Survey &rarr;</a>
         </div>
       </div>
       <div class="stat-strip">
         <div class="stat-strip-item">
-          <span class="num">700+</span>
-          <span class="lbl">Acres Captured on a Single Project</span>
+          <span class="num" style="font-size:1.1rem;">Property</span>
+          <span class="lbl">Transactions</span>
         </div>
         <div class="stat-strip-item">
-          <span class="num">3</span>
-          <span class="lbl">Survey Technologies in Our Fleet</span>
+          <span class="num" style="font-size:1.1rem;">Site</span>
+          <span class="lbl">Design</span>
         </div>
         <div class="stat-strip-item">
-          <span class="num">1</span>
-          <span class="lbl">Source of Truth Across All Disciplines</span>
+          <span class="num" style="font-size:1.1rem;">Construction</span>
+          <span class="lbl">Support</span>
         </div>
       </div>
     </section>
@@ -220,18 +220,18 @@
     <div class="feat-caps reveal" id="rv-feat">
       <a class="feat-cap" href="lidar.html">
         <span class="cap-label">Featured Capability</span>
-        <h3>LiDAR &amp; Drone Mapping</h3>
-        <p>Dense, high-accuracy point clouds for large or complex sites — faster than traditional methods.</p>
+        <h3>LiDAR and Aerial Mapping</h3>
+        <p>Aerial site data backed by conventional field surveying for planning and design.</p>
       </a>
       <a class="feat-cap" href="construction-staking.html">
         <span class="cap-label">Featured Capability</span>
         <h3>Construction Staking</h3>
-        <p>Keeping your crews on line and on grade through every phase of build-out.</p>
+        <p>Layout information and field coordination for the people building the work.</p>
       </a>
       <a class="feat-cap" href="alta-surveys.html">
         <span class="cap-label">Featured Capability</span>
-        <h3>ALTA / NSPS Surveys</h3>
-        <p>Land title surveys that meet the highest standards for commercial transactions.</p>
+        <h3>ALTA/NSPS Land Title Surveys</h3>
+        <p>Survey information and coordination for property transactions.</p>
       </a>
     </div>
 
@@ -292,23 +292,23 @@
       <div class="outcomes-4">
         <div class="oc4">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          <span class="oc-title">Accurate From Day One</span>
-          <span class="oc-sub">Field data you can trust from the first deliverable</span>
+          <span class="oc-title">Dependable Survey Information</span>
+          <span class="oc-sub">Methods and field checks matched to the project</span>
         </div>
         <div class="oc4">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          <span class="oc-title">Reliable Project Control</span>
-          <span class="oc-sub">Consistent positioning across all phases of work</span>
+          <span class="oc-title">Consistent Project Control</span>
+          <span class="oc-sub">Survey control coordinated with the people using the work</span>
         </div>
         <div class="oc4">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          <span class="oc-title">Faster Turnaround</span>
-          <span class="oc-sub">Modern technology keeps your schedule moving</span>
+          <span class="oc-title">Responsive Communication</span>
+          <span class="oc-sub">Expected timing and field needs discussed with your team</span>
         </div>
         <div class="oc4">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          <span class="oc-title">Fewer Construction Conflicts</span>
-          <span class="oc-sub">Catch discrepancies before they hit the field</span>
+          <span class="oc-title">Usable Deliverables</span>
+          <span class="oc-sub">Survey information and file formats agreed for the next step</span>
         </div>
       </div>
     </section>
@@ -327,23 +327,14 @@
     <section class="cardx2-sec reveal" id="rv6">
       <div class="advantage-band">
         <div>
-          <div class="cardx2-eyebrow red">One Team. Three Disciplines.</div>
-          <h2>Less Friction. Faster Delivery.</h2>
-          <div class="flow-steps">
-            <span class="step-pill">Planning</span>
-            <span class="arrow-sep">&rarr;</span>
-            <span class="step-pill">Surveying</span>
-            <span class="arrow-sep">&rarr;</span>
-            <span class="step-pill">Engineering</span>
-          </div>
+          <div class="cardx2-eyebrow red">Your Survey Team.</div>
+          <h2>Working With Your Team.</h2>
+          <p style="font-size:.85rem;color:rgba(255,255,255,.75);line-height:1.6;max-width:46ch;margin-top:.5rem;">Whether you're buying property, preparing a design, or building in the field, we work with your team to provide dependable survey information and responsive support.</p>
         </div>
-        <ul class="card-check3">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Less coordination between consultants</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Faster project delivery</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Fewer communication gaps</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Better project visibility</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Reduced risk of redesigns</li>
-        </ul>
+        <div style="display:flex;flex-direction:column;gap:.85rem;justify-content:center;">
+          <p style="font-size:.88rem;color:#fff;font-weight:600;line-height:1.5;">Already have an engineer or architect?</p>
+          <p style="font-size:.85rem;color:rgba(255,255,255,.75);line-height:1.6;">Our survey team works directly with your design team.</p>
+        </div>
       </div>
     </section>
 
@@ -363,26 +354,25 @@
         <div class="spot-left">
           <div>
             <div class="cardx2-eyebrow red">Project Spotlight</div>
-            <h2>Bana 85</h2>
-            <p class="spot-meta">Industrial &middot; Rooker &middot; 700+ Acres</p>
+            <h2>Bana 85 Commerce Center</h2>
+            <p class="spot-meta">Industrial &middot; Rooker &middot; Surveying for Phased Development</p>
           </div>
           <div class="stat-row">
-            <div class="stat-item"><span class="num">700+</span><span class="lbl">Acres Captured</span></div>
-            <div class="stat-item"><span class="num">1</span><span class="lbl">Unified Dataset</span></div>
+            <div class="stat-item"><span class="num" style="font-size:1.1rem;">Phased</span><span class="lbl">Industrial Development</span></div>
           </div>
         </div>
         <div class="spot-right">
           <div class="story-beat">
-            <span class="beat-label">Challenge</span>
-            <p>Capturing accurate ground truth across 700+ acres of complex terrain for a large-scale industrial development.</p>
+            <span class="beat-label">Project Goal</span>
+            <p>Provide site information for industrial planning and design.</p>
           </div>
           <div class="story-beat">
-            <span class="beat-label">Solution</span>
-            <p>LiDAR, drone (UAS) capture, and GNSS control feeding planning and engineering directly — no data lost between firms.</p>
+            <span class="beat-label">GCI's Role</span>
+            <p>Combine aerial mapping and field surveying with boundary, ALTA, and easement-related survey work.</p>
           </div>
           <div class="story-beat">
-            <span class="beat-label">Result</span>
-            <p>A single accurate dataset that reduced rework and kept the whole team on one source of truth throughout the project.</p>
+            <span class="beat-label">Client Benefit</span>
+            <p>Survey information coordinated with the owner's design and transaction teams.</p>
           </div>
         </div>
       </div>
@@ -392,24 +382,23 @@
     <div class="cardx2-divider reveal" id="rv9">
       <div class="line"></div>
       <div class="badge">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-        <span>Industries</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <span>Who We Work With</span>
       </div>
       <div class="line"></div>
     </div>
 
-    <!-- INDUSTRIES -->
+    <!-- AUDIENCE -->
     <section class="cardx2-sec reveal" id="rv10">
-      <div class="cardx2-eyebrow">Industries We Serve</div>
-      <h2>Who We Work With</h2>
+      <div class="cardx2-eyebrow">Who We Work With</div>
+      <h2>Built for Your Project Team</h2>
       <div class="ind-row2">
-        <div class="ind-item2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><div>Residential</div></div>
-        <div class="ind-item2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M10 21v-5h4v5"/></svg><div>Commercial</div></div>
-        <div class="ind-item2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V11l6 4V11l6 4V7l6 4v10z"/><path d="M3 21h18"/></svg><div>Industrial</div></div>
-        <div class="ind-item2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 9h18z"/><path d="M5 9v9M10 9v9M14 9v9M19 9v9M3 21h18"/></svg><div>Municipal</div></div>
-        <div class="ind-item2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 2 9l10 5 10-5-10-5z"/><path d="M6 11v5c0 1 3 2.5 6 2.5s6-1.5 6-2.5v-5"/></svg><div>Education</div></div>
-        <div class="ind-item2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 8l9 5 9-5-9-5z"/><path d="M3 13l9 5 9-5"/></svg><div>Mixed-Use</div></div>
-        <div class="ind-item2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M12 8v8M8 12h8"/></svg><div>Healthcare</div></div>
+        <div class="ind-item2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V11l6 4V11l6 4V7l6 4v10z"/><path d="M3 21h18"/></svg><div>Developers</div></div>
+        <div class="ind-item2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg><div>Attorneys</div></div>
+        <div class="ind-item2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg><div>Contractors</div></div>
+        <div class="ind-item2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg><div>Engineers</div></div>
+        <div class="ind-item2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg><div>Property Owners</div></div>
+        <div class="ind-item2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 9h18z"/><path d="M5 9v9M10 9v9M14 9v9M19 9v9M3 21h18"/></svg><div>Architects</div></div>
       </div>
     </section>
 
@@ -428,8 +417,8 @@
       <div class="cta-band2">
         <div>
           <div class="cardx2-eyebrow red">Talk With Our Team</div>
-          <h2>Let’s Discuss Your Project.</h2>
-          <a class="btn-card-accent" href="contact.html">Schedule a Project Discussion &rarr;</a>
+          <h2>Let's Discuss Your Survey.</h2>
+          <a class="btn-card-accent" href="contact.html?service=Land%20Surveying">Discuss Your Survey &rarr;</a>
         </div>
         <div class="cta-meta">
           <div><span class="lab">Direct Contact</span><span>Brandon Hightower, Survey Manager</span></div>
