@@ -643,18 +643,7 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, input:focus-visible {
 /* ============================================================
    ABOUT PAGE (2026-07)
    ============================================================ */
-.about-hero { position: relative; background: #fff; overflow: hidden;
-  padding-block: clamp(44px, 7vw, 92px); }
-.about-hero::before { content: ""; position: absolute; left: -6%; top: 0; bottom: 0; width: 62%;
-  background: url(../img/contour-wide.svg) left center / cover no-repeat;
-  opacity: .04; pointer-events: none; }
-.about-hero .wrap { position: relative; z-index: 1; display: grid;
-  grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
-.about-hero .eyebrow { color: var(--red); }
-.about-hero h1 { font-size: clamp(2.5rem, 5.2vw, 4.4rem); max-width: 13ch; margin-bottom: .32em; }
-.about-hero h1 .dot { color: var(--red); }
-.about-hero .lead { margin-bottom: 1.05em; max-width: 46ch; }
-.about-hero .body { color: var(--ink-70); max-width: 52ch; font-size: .96rem; margin-bottom: 0; }
+/* About hero now defined in about.html to match the Land Planning hero. */
 
 .about-visual { position: relative; aspect-ratio: 4 / 3; }
 .av-media { position: absolute; inset: 8% 0 8% 14%;
@@ -712,7 +701,6 @@ a:focus-visible, button:focus-visible, .btn:focus-visible, input:focus-visible {
     padding-top: clamp(30px, 5vw, 48px); }
 }
 @media (max-width: 900px){
-  .about-hero .wrap { grid-template-columns: 1fr; }
   .about-visual { aspect-ratio: 4 / 3; max-width: 520px; width: 100%; }
 }
 
