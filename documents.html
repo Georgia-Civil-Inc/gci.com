@@ -293,10 +293,10 @@
             <p>Need our business license, certificate of insurance, W-9, or professional license for a bid or project? Fill out the form and we'll get the right documentation to you within one business day.</p>
           </div>
 
-          <form class="doc-form" data-contact action="https://api.web3forms.com/submit" method="POST">
+          <form class="doc-form" id="doc-request-form" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="4c1dc681-6cb8-4efa-bfb8-f94b2a7f37e3">
             <input type="hidden" name="subject" value="Documentation Request — Georgia Civil">
-            <input type="hidden" name="to" value="chelsea@georgiacivil.com,stephanie@georgiacivil.com">
+            <input type="hidden" name="to" value="todd@georgiacivil.com,chelsea@georgiacivil.com">
             <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
 
             <div class="doc-form-row">
@@ -325,6 +325,37 @@
               <p class="doc-form-note">Requests are reviewed by our operations team and fulfilled within one business day.</p>
             </div>
           </form>
+
+          <!-- Success message (hidden until form submits) -->
+          <div id="doc-request-success" style="display:none; padding: 28px 24px; border: 1.5px solid rgba(2,5,52,.1); background: #fafafa; margin-top: 16px;">
+            <p style="font-family:'Montserrat',sans-serif; font-size:.92rem; font-weight:600; color:#020534; margin:0 0 8px;">Request received.</p>
+            <p style="font-family:'Montserrat',sans-serif; font-size:.85rem; color:rgba(2,5,52,.6); line-height:1.7; margin:0;">We'll follow up within one business day with the documentation you need. If it's urgent, call us directly.</p>
+          </div>
+
+          <script>
+            (function() {
+              var form = document.getElementById('doc-request-form');
+              var success = document.getElementById('doc-request-success');
+              if (!form) return;
+              form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var data = new FormData(form);
+                fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
+                  .then(function(r) { return r.json(); })
+                  .then(function(json) {
+                    if (json.success) {
+                      form.style.display = 'none';
+                      success.style.display = 'block';
+                    } else {
+                      alert('Something went wrong. Please try again or call us directly.');
+                    }
+                  })
+                  .catch(function() {
+                    alert('Something went wrong. Please try again or call us directly.');
+                  });
+              });
+            })();
+          </script>
         </div>
 
       </div>
