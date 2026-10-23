@@ -12,11 +12,11 @@
 
 const ROUTING = {
   'Land Planning':     ['todd@georgiacivil.com', 'chelsea@georgiacivil.com'],
-  'Civil Engineering': ['jason@georgiacivil.com', 'chelsea@georgiacivil.com'],
+  'Civil Engineering': ['todd@georgiacivil.com', 'chelsea@georgiacivil.com'],
   'Land Surveying':    ['brandon@georgiacivil.com', 'stephanie@georgiacivil.com'],
 };
 
-const FALLBACK = ['chelsea@georgiacivil.com'];
+const FALLBACK = ['todd@georgiacivil.com', 'chelsea@georgiacivil.com'];
 
 const CORS = {
   'Access-Control-Allow-Origin':  '*',
