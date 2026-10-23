@@ -13,7 +13,7 @@
 const ROUTING = {
   'Land Planning':     ['todd@georgiacivil.com', 'chelsea@georgiacivil.com'],
   'Civil Engineering': ['todd@georgiacivil.com', 'chelsea@georgiacivil.com'],
-  'Land Surveying':    ['brandon@georgiacivil.com', 'stephanie@georgiacivil.com'],
+  'Land Surveying':    ['stephanie@georgiacivil.com', 'brandon@georgiacivil.com'],
 };
 
 const FALLBACK = ['todd@georgiacivil.com', 'chelsea@georgiacivil.com'];
