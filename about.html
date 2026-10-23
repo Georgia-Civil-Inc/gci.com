@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About GCI — Georgia Civil</title>
+  <title>About GCI, Georgia Civil</title>
   <meta name="description" content="About Georgia Civil — an integrated land planning, surveying, and civil engineering firm built on better planning.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,44 +24,37 @@
       background: #fff;
       position: relative;
       overflow: hidden;
-      padding-block: clamp(72px, 11vw, 136px);
+      min-height: clamp(480px, 70vh, 680px);
+      display: flex;
+      align-items: center;
     }
-
-    /* Suppress any global texture from styles.css */
     .about-hero::before { display: none !important; }
+    .about-hero .wrap { position: relative; z-index: 2; width: 100%; }
 
-    .about-hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 3px;
-      background: #CA2131;
+    /* Copy column: same measurements as Land Planning's .lp-hero-copy */
+    .about-hero-copy { max-width: 540px; text-align: left; }
+    .about-hero-copy .eyebrow { color: rgba(2,5,52,.5); }
+    .about-hero-copy h1 {
+      color: #020534;
+      font-size: clamp(2.3rem, 5vw, 3.5rem);
+      line-height: 1.04;
+      margin: .18em 0 .5em;
     }
-
-    .about-hero .wrap {
-      position: relative;
-      z-index: 2;
-      max-width: 52% !important;
-      margin-left: 0 !important;
-      margin-right: auto !important;
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: flex-start !important;
-      gap: clamp(16px, 2.5vw, 28px) !important;
+    .about-hero-copy p {
+      color: rgba(2,5,52,.65);
+      max-width: 46ch;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 0;
     }
-
     @media (max-width: 768px) {
-      .about-hero .wrap {
-        max-width: 100% !important;
-        position: relative;
-        z-index: 2;
-      }
+      .about-hero { min-height: 0; padding-block: clamp(48px, 12vw, 76px); }
     }
 
-    /* gc letterform — right half, vertically centered */
+    /* gc letterform — right side, bleeding off the edge */
     .about-hero-topo {
       position: absolute;
-      right: -20vw;
+      right: -27vw;
       top: 0;
       width: 100vw;
       height: 100%;
@@ -76,25 +69,6 @@
         opacity: .25;
         z-index: 0;
       }
-    }
-
-    .about-hero-h1 {
-      font-family: 'Libre Baskerville', Georgia, serif;
-      font-size: clamp(2.8rem, 6vw, 5.5rem);
-      font-weight: 700;
-      color: #020534;
-      line-height: 1;
-      margin: 0 0 clamp(20px, 3vw, 36px);
-      transform: none;
-    }
-
-    .about-hero-lead {
-      font-family: 'Montserrat', sans-serif;
-      font-size: clamp(.95rem, 1.5vw, 1.1rem);
-      color: #020534;
-      line-height: 1.72;
-      margin: 0;
-      max-width: 48ch;
     }
 
     /* ══════════════════════════════════════════
@@ -416,8 +390,11 @@
 </svg>
 
     <div class="wrap">
-      <h1 class="about-hero-h1">About GCI.</h1>
-      <p class="about-hero-lead">At GCI, we believe successful projects are built on better planning. Most firms get involved after the critical decisions are made — our approach begins earlier, when it still matters most.</p>
+      <div class="about-hero-copy">
+      <span class="eyebrow">Georgia Civil Inc.</span>
+      <h1>About GCI.</h1>
+      <p>Georgia Civil brings planning, surveying, and engineering together to help clients understand their sites and carry projects forward. We are a project partner, built to add value to your development, and take responsibility for the work we agree to deliver. Our proven process allows our team to stay ahead of the details that affect your project and keep you informed as the work develops.</p>
+      </div>
     </div>
   </section>
 
@@ -427,39 +404,11 @@
       <span class="pillars-label">What sets us apart</span>
       <div class="pillars-grid">
 
-        <!-- Plan First -->
-        <div class="pillar">
-          <div class="pillar-text">
-            <h3 class="pillar-heading">Plan First.</h3>
-            <p class="pillar-body">The earlier we're involved, the more value we protect. We join projects before commitments are made — when decisions still carry their greatest impact.</p>
-          </div>
-          <div class="pillar-graphic">
-            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Calendar frame -->
-              <rect x="8" y="16" width="64" height="54" rx="2" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.75)" stroke-width="2.6"/>
-              <line x1="8" y1="28" x2="72" y2="28" stroke="rgba(255,255,255,.4)" stroke-width="3.2"/>
-              <!-- Binding posts -->
-              <line x1="24" y1="10" x2="24" y2="22" stroke="rgba(255,255,255,.65)" stroke-width="3.0" stroke-linecap="round"/>
-              <line x1="56" y1="10" x2="56" y2="22" stroke="rgba(255,255,255,.65)" stroke-width="3.0" stroke-linecap="round"/>
-              <!-- Timeline row -->
-              <line x1="16" y1="46" x2="64" y2="46" stroke="rgba(255,255,255,.18)" stroke-width="1.6"/>
-              <!-- Early dot — red, active -->
-              <circle cx="24" cy="46" r="5" fill="rgba(202,33,49,.9)" stroke="rgba(255,255,255,.3)" stroke-width="1.6"/>
-              <!-- Later dots — faded -->
-              <circle cx="40" cy="46" r="4" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.3)" stroke-width="1.6"/>
-              <circle cx="56" cy="46" r="4" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.25)" stroke-width="1.6"/>
-              <!-- Arrow pointing up from early dot -->
-              <line x1="24" y1="58" x2="24" y2="65" stroke="rgba(202,33,49,.55)" stroke-width="3.2" stroke-dasharray="2 2"/>
-              <polyline points="20,61 24,56 28,61" stroke="rgba(202,33,49,.8)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </div>
-
         <!-- See the Full Picture -->
         <div class="pillar">
           <div class="pillar-text">
             <h3 class="pillar-heading">See the Full Picture.</h3>
-            <p class="pillar-body">Planning, surveying, and engineering under one roof means constraints surface early, disciplines don't contradict each other, and nothing falls through the handoff.</p>
+            <p class="pillar-body">Our planners, surveyors, and engineers work with trusted consultants and your project team to connect the site details and bring the right people to each decision.</p>
           </div>
           <div class="pillar-graphic">
             <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -487,11 +436,39 @@
           </div>
         </div>
 
-        <!-- Experience That Shows -->
+        <!-- Plan First -->
         <div class="pillar">
           <div class="pillar-text">
-            <h3 class="pillar-heading">Experience That Shows.</h3>
-            <p class="pillar-body">Our work spans Georgia counties, project types, and site conditions. That breadth means fewer surprises on your project and faster answers when they matter most.</p>
+            <h3 class="pillar-heading">Plan First.</h3>
+            <p class="pillar-body">We ask the questions that affect your next commitment and analyze the site and cost variables before decisions become harder to change.</p>
+          </div>
+          <div class="pillar-graphic">
+            <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Calendar frame -->
+              <rect x="8" y="16" width="64" height="54" rx="2" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.75)" stroke-width="2.6"/>
+              <line x1="8" y1="28" x2="72" y2="28" stroke="rgba(255,255,255,.4)" stroke-width="3.2"/>
+              <!-- Binding posts -->
+              <line x1="24" y1="10" x2="24" y2="22" stroke="rgba(255,255,255,.65)" stroke-width="3.0" stroke-linecap="round"/>
+              <line x1="56" y1="10" x2="56" y2="22" stroke="rgba(255,255,255,.65)" stroke-width="3.0" stroke-linecap="round"/>
+              <!-- Timeline row -->
+              <line x1="16" y1="46" x2="64" y2="46" stroke="rgba(255,255,255,.18)" stroke-width="1.6"/>
+              <!-- Early dot — red, active -->
+              <circle cx="24" cy="46" r="5" fill="rgba(202,33,49,.9)" stroke="rgba(255,255,255,.3)" stroke-width="1.6"/>
+              <!-- Later dots — faded -->
+              <circle cx="40" cy="46" r="4" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.3)" stroke-width="1.6"/>
+              <circle cx="56" cy="46" r="4" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.25)" stroke-width="1.6"/>
+              <!-- Arrow pointing up from early dot -->
+              <line x1="24" y1="58" x2="24" y2="65" stroke="rgba(202,33,49,.55)" stroke-width="3.2" stroke-dasharray="2 2"/>
+              <polyline points="20,61 24,56 28,61" stroke="rgba(202,33,49,.8)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Experience That Delivers -->
+        <div class="pillar">
+          <div class="pillar-text">
+            <h3 class="pillar-heading">Experience That Delivers.</h3>
+            <p class="pillar-body">Our experience is leveraged every day to add tremendous value to the clients we serve.</p>
           </div>
           <div class="pillar-graphic">
             <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -522,7 +499,7 @@
   <section class="center">
     <div class="wrap">
       <h2>Ready to Move Your Project Forward?</h2>
-      <p class="lead" style="max-width:48ch;margin:16px auto 28px;">Let's find its value before costly commitments are made.</p>
+      <p class="lead" style="max-width:48ch;margin:16px auto 28px;">Tell us more about your project. We'll connect you with the right people and help identify the next step.</p>
       <a class="btn btn-accent" href="contact.html">Start a Conversation &rarr;</a>
     </div>
   </section>
@@ -536,26 +513,26 @@
         <div class="about-news-head">
           <span class="about-eyebrow">From the field</span>
           <h2>Recent News</h2>
-          <a href="https://www.linkedin.com/company/georgia-civil-inc-/" target="_blank" rel="noopener">Follow on LinkedIn &rarr;</a>
+          <a href="https://www.linkedin.com/company/georgia-civil-inc-/" target="_blank" rel="noopener">Visit GCI on LinkedIn &rarr;</a>
         </div>
         <div class="about-news-cards" id="about-news-feed">
-          <a class="about-news-card" href="https://www.linkedin.com/company/georgia-civil-inc-/" target="_blank" rel="noopener">
+          <a class="about-news-card" href="project-putnam-elementary.html">
             <span class="date">Latest</span>
-            <h3>Bana 85 Grading Plan Clears Review</h3>
-            <p>Coordinated earthwork balances cut and fill across 700+ acres of industrial development.</p>
-            <span class="more">Read on LinkedIn &rarr;</span>
+            <h3>Putnam County Elementary School</h3>
+            <p>Civil engineering and construction staking for an elementary school serving grades 3-5 in Eatonton.</p>
+            <span class="more">View Project &rarr;</span>
           </a>
-          <a class="about-news-card" href="https://www.linkedin.com/company/georgia-civil-inc-/" target="_blank" rel="noopener">
+          <a class="about-news-card" href="project-bana-85.html">
             <span class="date">Recent</span>
-            <h3>Welcoming New Survey Crew Members</h3>
-            <p>Growing our LiDAR and field capability to keep pace with active project work.</p>
-            <span class="more">Read on LinkedIn &rarr;</span>
+            <h3>Bana 85 Commerce Center</h3>
+            <p>Coordinated earthwork and civil design supporting phased industrial development.</p>
+            <span class="more">View Project &rarr;</span>
           </a>
-          <a class="about-news-card" href="https://www.linkedin.com/company/georgia-civil-inc-/" target="_blank" rel="noopener">
+          <a class="about-news-card" href="project-prowell-park.html">
             <span class="date">Recent</span>
-            <h3>Prowell Park Master Plan Refined</h3>
-            <p>Balancing drainage, buffering, and neighborhood compatibility while preserving the owner's vision.</p>
-            <span class="more">Read on LinkedIn &rarr;</span>
+            <h3>Prowell Park</h3>
+            <p>Site planning for phased recreation facilities in Coweta County.</p>
+            <span class="more">View Project &rarr;</span>
           </a>
         </div>
       </div>
@@ -564,8 +541,8 @@
       <div>
         <div class="about-careers-head">
           <span class="about-eyebrow">Careers</span>
-          <h2>Join Our Team.</h2>
-          <p>At GCI you won't be siloed into a single discipline — planners, surveyors, and engineers work side by side from day one. Send a message and someone from our team will follow up.</p>
+          <h2>Interested in Joining Our Team?</h2>
+          <p>We welcome people who take ownership of their work, communicate well, and want to keep learning. Tell us where you could contribute.</p>
         </div>
         <form class="about-form" data-contact action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
           <input type="hidden" name="access_key" value="4c1dc681-6cb8-4efa-bfb8-f94b2a7f37e3">
@@ -608,7 +585,7 @@
             <textarea id="c-message" name="message" rows="5" placeholder=""></textarea>
           </div>
           <div class="about-form-submit">
-            <button class="about-form-btn" type="submit">Send Message &rarr;</button>
+            <button class="about-form-btn" type="submit">Introduce Yourself &rarr;</button>
           </div>
         </form>
       </div>

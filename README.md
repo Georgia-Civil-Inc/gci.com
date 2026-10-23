@@ -2,7 +2,7 @@
 
 A fully static site (HTML, CSS, JS, images). No build step, no server code.
 It can be hosted for free on **GitHub Pages**.
-
+Also connected to Netlify: every pull request gets a Deploy Preview link for review.
 ---
 
 ## Deploy to GitHub Pages

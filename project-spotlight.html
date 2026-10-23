@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Spotlight — Georgia Civil</title>
+  <title>Project Spotlight, Georgia Civil</title>
   <meta name="description" content="Selected Georgia Civil projects across industrial development, public recreation, and residential subdivisions — integrated planning, survey, and engineering in the field.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,6 +54,7 @@
       display: flex; flex-direction: column; gap: .65rem; flex: 1;
     }
     .proj-card-body h3 { font-size: clamp(1.2rem,2vw,1.5rem); margin: 0; line-height: 1.15; }
+    .proj-card-body .proj-type { display:block; font-family:var(--utility); font-size:.62rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#CA2131; margin-bottom:6px; }
     .proj-card-body p { font-size: .84rem; color: #555; line-height: 1.65; margin: 0; flex: 1; }
     .proj-card-body .tags { display: flex; flex-wrap: wrap; gap: 7px; }
     .proj-card-body .proj-more {
@@ -82,7 +83,7 @@
     <div class="wrap">
       <span class="eyebrow">Selected Work</span>
       <h1 class="page-title">Project Spotlight</h1>
-      <p class="lead" style="max-width:52ch;color:rgba(255,255,255,.72);">Industrial development, public recreation, residential conservation — integrated from the first site visit.</p>
+      <p class="lead" style="max-width:52ch;color:rgba(255,255,255,.72);">See how our planning, surveying, and civil engineering support site decisions, design, and construction.</p>
     </div>
   </section>
 
@@ -92,13 +93,14 @@
       <a class="proj-card" href="project-bana-85.html">
         <div class="proj-card-img">
           <div class="proj-card-img-inner" style="background-image:url(assets/img/project-bana-85.jpg);"></div>
-          <span class="ph-label">Bana 85 — drone site overview</span>
+          <span class="ph-label">Bana 85 Commerce Center, drone site overview</span>
         </div>
         <div class="proj-card-body">
-          <h3>Bana 85</h3>
+          <span class="proj-type">Industrial Site Optimization and Civil Construction Documents</span>
+          <h3>Bana 85 Commerce Center</h3>
           <div class="tags">
-            <span class="tag">700+ Acres</span>
-            <span class="tag">LiDAR Survey</span>
+            <span class="tag">Surveying</span>
+            <span class="tag">Land Planning</span>
             <span class="tag">Civil Engineering</span>
           </div>
           <span class="proj-more">View project &rarr;</span>
@@ -108,14 +110,15 @@
       <a class="proj-card" href="project-camp-buckhead.html">
         <div class="proj-card-img">
           <div class="proj-card-img-inner" style="background-image:url(assets/img/project-camp-buckhead.jpg);"></div>
-          <span class="ph-label">Camp Buckhead — lake lot layout</span>
+          <span class="ph-label">Camp Buckhead, architectural rendering</span>
         </div>
         <div class="proj-card-body">
+          <span class="proj-type">Residential Community Planning</span>
           <h3>Camp Buckhead</h3>
           <div class="tags">
-            <span class="tag">291 Acres</span>
-            <span class="tag">Community Septic</span>
-            <span class="tag">31 Lake Lots</span>
+            <span class="tag">Approximately 292 Acres</span>
+            <span class="tag">45 Homesites</span>
+            <span class="tag">Site Planning</span>
           </div>
           <span class="proj-more">View project &rarr;</span>
         </div>
@@ -124,14 +127,15 @@
       <a class="proj-card" href="project-prowell-park.html">
         <div class="proj-card-img">
           <div class="proj-card-img-inner" style="background-image:url(assets/img/project-prowell-park.jpg);"></div>
-          <span class="ph-label">Prowell Park — site plan</span>
+          <span class="ph-label">Prowell Park, site plan</span>
         </div>
         <div class="proj-card-body">
+          <span class="proj-type">Park and Community Space Planning</span>
           <h3>Prowell Park</h3>
           <div class="tags">
-            <span class="tag">~300 Acres</span>
-            <span class="tag">Master Plan</span>
-            <span class="tag">Phased</span>
+            <span class="tag">Coweta County</span>
+            <span class="tag">Phase 1 Site Design</span>
+            <span class="tag">Future-Phase Planning</span>
           </div>
           <span class="proj-more">View project &rarr;</span>
         </div>
@@ -140,14 +144,14 @@
       <a class="proj-card" href="project-morgan-county-park.html">
         <div class="proj-card-img">
           <div class="proj-card-img-inner" style="background-image:url(assets/img/hero-land-planning.jpg);"></div>
-          <span class="ph-label">Morgan County Recreation Park</span>
+          <span class="ph-label">Morgan County Recreation Complex</span>
         </div>
         <div class="proj-card-body">
-          <h3>Morgan County Recreation Park</h3>
+          <span class="proj-type">Park and Community Space Planning</span>
+          <h3>Morgan County Recreation Complex</h3>
           <div class="tags">
-            <span class="tag">~70 Acres</span>
-            <span class="tag">GCI-Led Layout</span>
-            <span class="tag">Phased</span>
+            <span class="tag">Public Recreation</span>
+            <span class="tag">Phased Development</span>
           </div>
           <span class="proj-more">View project &rarr;</span>
         </div>
@@ -157,14 +161,16 @@
       <a class="proj-card" href="project-adairsville.html">
         <div class="proj-card-img">
           <div class="proj-card-img-inner" style="background-image:url(assets/img/ashley-capital-adairsville.webp);"></div>
-          <span class="ph-label">Adairsville Logistics Center — aerial view</span>
+          <span class="ph-label">Georgia North Logistics Center, aerial view</span>
         </div>
         <div class="proj-card-body">
-          <h3>Adairsville Logistics Center</h3>
+          <span class="proj-type">Full-Service Surveying</span>
+          <h3>Georgia North Logistics Center</h3>
+          <p style="font-size:.82rem;color:#666;margin:2px 0 10px;">Surveying and civil engineering for phased industrial development.</p>
           <div class="tags">
-            <span class="tag">ALTA/NSPS Survey</span>
-            <span class="tag">Industrial</span>
-            <span class="tag">Due Diligence</span>
+            <span class="tag">Surveying</span>
+            <span class="tag">Civil Engineering</span>
+            <span class="tag">Adairsville, GA</span>
           </div>
           <span class="proj-more">View project &rarr;</span>
         </div>
@@ -173,14 +179,14 @@
       <a class="proj-card" href="project-putnam-elementary.html">
         <div class="proj-card-img">
           <div class="proj-card-img-inner" style="background-image:url(assets/img/putnam-county-elementary.webp);background-position:center 25%;"></div>
-          <span class="ph-label">Putnam County Elementary School · Eatonton, GA</span>
+          <span class="ph-label">Putnam County Elementary School, Eatonton, GA</span>
         </div>
         <div class="proj-card-body">
+          <span class="proj-type">K-12 Schools</span>
           <h3>Putnam County Elementary School</h3>
           <div class="tags">
+            <span class="tag">Civil Engineering</span>
             <span class="tag">Construction Staking</span>
-            <span class="tag">K&ndash;12</span>
-            <span class="tag">2025 Design Award</span>
           </div>
           <span class="proj-more">View project &rarr;</span>
         </div>
@@ -190,9 +196,9 @@
 
   <section class="center">
     <div class="wrap">
-      <h2>Have a Site Like This?</h2>
-      <p class="lead" style="max-width:48ch;margin:16px auto 28px;">Let's find its value before costly commitments are made.</p>
-      <a class="btn btn-accent" href="contact.html">Start a conversation &rarr;</a>
+      <h2>Let's Talk About Your Site</h2>
+      <p class="lead" style="max-width:48ch;margin:16px auto 28px;">Whether you're considering a property or working through an active project, we are ready to discuss where we can help.</p>
+      <a class="btn btn-accent" href="contact.html">Start a Conversation &rarr;</a>
     </div>
   </section>
 
