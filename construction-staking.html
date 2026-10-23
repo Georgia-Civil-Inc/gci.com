@@ -40,6 +40,19 @@
     .sub-why p { font-family: 'Montserrat', sans-serif; font-size: .92rem; color: rgba(255,255,255,.88); line-height: 1.72; margin: 0 0 .75rem; }
     .sub-why p:last-child { margin: 0; }
     @media (max-width: 860px) { .sub-detail .wrap { grid-template-columns: 1fr; } }
+    .response-band { background: #020534; padding: clamp(48px,6vw,80px) 0; }
+    .response-band .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px,5vw,64px); align-items: center; }
+    .response-band-text .sub-eyebrow { color: rgba(255,255,255,.45); margin-bottom: 16px; }
+    .response-band-text h2 { font-family: 'Libre Baskerville', Georgia, serif; font-size: clamp(1.6rem,3vw,2.4rem); font-weight: 700; color: #fff; margin: 0 0 1rem; line-height: 1.2; }
+    .response-band-text p { font-family: 'Montserrat', sans-serif; font-size: .92rem; color: rgba(255,255,255,.75); line-height: 1.72; margin: 0; }
+    .response-stats { display: flex; flex-direction: column; gap: 0; }
+    .response-stat { display: flex; align-items: center; gap: 20px; padding: 22px 0; border-top: 1px solid rgba(255,255,255,.10); }
+    .response-stat:last-child { border-bottom: 1px solid rgba(255,255,255,.10); }
+    .response-stat-icon { flex-shrink: 0; width: 42px; height: 42px; background: #CA2131; border-radius: 2px; display: flex; align-items: center; justify-content: center; }
+    .response-stat-icon svg { width: 22px; height: 22px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .response-stat-label { font-family: 'Montserrat', sans-serif; font-size: .78rem; font-weight: 700; color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: .12em; display: block; margin-bottom: 4px; }
+    .response-stat-value { font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 600; color: #fff; }
+    @media (max-width: 860px) { .response-band .wrap { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body data-page="land-surveying">
@@ -51,6 +64,45 @@
       <h1>Putting the Design on the Ground.</h1>
       <p style="max-width:62ch;font-family:'Montserrat',sans-serif;font-size:1rem;color:rgba(255,255,255,.85);margin-top:18px;line-height:1.65;">Construction staking from a team that understands the plans and communicates with the people building the work. We coordinate field needs and respond to layout questions within the agreed scope.</p>
       <a class="btn btn-accent btn-arrow" href="contact.html?service=Land%20Surveying" style="margin-top:22px;display:inline-flex;">Discuss Your Staking Needs</a>
+    </div>
+  </section>
+
+  <section class="response-band">
+    <div class="wrap">
+      <div class="response-band-text">
+        <span class="sub-eyebrow">Response &amp; Turnaround</span>
+        <h2>Construction doesn't wait on the surveyor.</h2>
+        <p>Fast response is not a bonus — it is how we work. We make every effort to get crews on site when they are needed, keep the job moving when plans change, and respond quickly when unexpected conditions arise in the field.</p>
+      </div>
+      <div class="response-stats">
+        <div class="response-stat">
+          <div class="response-stat-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <span class="response-stat-label">Response Time</span>
+            <span class="response-stat-value">Same-day response to layout requests and field questions</span>
+          </div>
+        </div>
+        <div class="response-stat">
+          <div class="response-stat-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <span class="response-stat-label">Field Coordination</span>
+            <span class="response-stat-value">Direct communication between our surveyors and your superintendent</span>
+          </div>
+        </div>
+        <div class="response-stat">
+          <div class="response-stat-icon">
+            <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <div>
+            <span class="response-stat-label">Schedule Priority</span>
+            <span class="response-stat-value">We adjust when the project adjusts — not the other way around</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
