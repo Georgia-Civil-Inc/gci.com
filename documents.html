@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registrations &amp; Documents, Georgia Civil</title>
-  <meta name="description" content="Download Georgia Civil's professional certifications, licenses, insurance certificates, and compliance documents.">
+  <title>Credentials &amp; Capabilities — Georgia Civil</title>
+  <meta name="description" content="Georgia Civil is a licensed and insured civil engineering and surveying firm serving Georgia. Download our Capability Statement or request official credentials for bids and compliance.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -54,7 +54,7 @@
       color: rgba(255,255,255,.72);
       line-height: 1.7;
       margin: 0;
-      max-width: 52ch;
+      max-width: 56ch;
     }
 
     /* ── Body ── */
@@ -67,9 +67,9 @@
       gap: clamp(48px, 7vw, 96px);
       align-items: start;
     }
-    
+    @media (max-width: 768px) { .docs-layout { grid-template-columns: 1fr; } }
 
-    /* ── Document list ── */
+    /* ── Credential list column ── */
     .doc-col-head {
       font-family: 'Roboto', sans-serif;
       font-size: .62rem;
@@ -78,15 +78,8 @@
       text-transform: uppercase;
       color: #CA2131;
       display: block;
-      margin-bottom: clamp(20px, 3vw, 32px);
+      margin-bottom: clamp(16px, 2.5vw, 24px);
     }
-    .doc-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 28px;
-    }
-    @media (max-width: 540px) { .doc-list { grid-template-columns: 1fr; } }
     .doc-section-label {
       font-family: 'Roboto', sans-serif;
       font-size: .58rem;
@@ -99,35 +92,52 @@
       padding-bottom: 8px;
       border-bottom: 1px solid rgba(2,5,52,.06);
     }
-    .doc-section-label:first-child { margin-top: 0; }
-    .doc-row {
+
+    /* Service list */
+    .cap-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 clamp(28px, 4vw, 40px);
+      display: grid;
+      gap: 10px;
+    }
+    .cap-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: .9rem;
+      font-weight: 600;
+      color: #020534;
+    }
+    .cap-dot {
+      width: 6px; height: 6px;
+      background: #CA2131;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Download card */
+    .doc-card {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      padding: 14px 16px;
-      border: 1px solid rgba(2,5,52,.1);
+      padding: 16px 18px;
+      border: 1.5px solid rgba(2,5,52,.12);
       border-radius: 4px;
       background: #fff;
+      margin-top: 12px;
+      box-sizing: border-box;
     }
-    .doc-info h3 {
+    .doc-card-name {
       font-family: 'Montserrat', sans-serif;
       font-size: .92rem;
       font-weight: 600;
       color: #020534;
-      margin: 0 0 3px;
-      transform: none;
+      margin-bottom: 3px;
     }
-    .doc-info { flex: 1; min-width: 0; overflow: hidden; }
-    .doc-type {
-      font-family: 'Roboto', sans-serif;
-      font-size: .55rem;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: rgba(2,5,52,.3);
-    }
-    .doc-status {
+    .doc-card-meta {
       font-family: 'Roboto', sans-serif;
       font-size: .55rem;
       font-weight: 700;
@@ -145,10 +155,9 @@
       transition: border-color .2s, background .2s, color .2s;
     }
     .doc-dl:hover { border-color: #CA2131; background: #CA2131; color: #fff; }
-    .doc-dl.pending { pointer-events: none; opacity: .28; cursor: default; }
     .doc-dl svg { width: 16px; height: 16px; }
 
-    /* ── Request form ── */
+    /* ── Request form column ── */
     .doc-request-head {
       margin-bottom: 28px;
       padding-bottom: 20px;
@@ -187,7 +196,8 @@
       letter-spacing: .08em; text-transform: uppercase;
       color: #020534; display: block; margin-bottom: 5px;
     }
-    .doc-form input, .doc-form textarea {
+    .doc-form input,
+    .doc-form textarea {
       width: 100%;
       font-family: 'Montserrat', sans-serif;
       font-size: .9rem; color: #020534;
@@ -196,13 +206,16 @@
       background: #fff; outline: none;
       border-radius: 0; -webkit-appearance: none;
       transition: border-color .15s, box-shadow .15s;
+      box-sizing: border-box;
     }
-    .doc-form input:focus, .doc-form textarea:focus {
+    .doc-form input:focus,
+    .doc-form textarea:focus {
       border-color: #CA2131;
       box-shadow: 0 0 0 3px rgba(202,33,49,.08);
     }
     .doc-form textarea { resize: vertical; }
     .doc-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 540px) { .doc-form-row { grid-template-columns: 1fr; } }
     .doc-form-submit { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 4px; }
     .doc-form-btn {
       font-family: 'Roboto', sans-serif;
@@ -212,14 +225,18 @@
       padding: .78rem 1.75rem; cursor: pointer; transition: background .2s;
     }
     .doc-form-btn:hover { background: #a81a28; }
-    .doc-form-note { font-family: 'Montserrat', sans-serif; font-size: .7rem; color: rgba(2,5,52,.38); margin: 0; }
-    @media (max-width: 540px) { .doc-form-row { grid-template-columns: 1fr; } }
+    .doc-form-note {
+      font-family: 'Montserrat', sans-serif;
+      font-size: .7rem;
+      color: rgba(2,5,52,.38);
+      margin: 0;
+    }
 
   </style>
   <link rel="preload" as="image" href="assets/img/logo.png">
   <script src="assets/js/main.js" defer></script>
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Registrations &amp; Documents — Georgia Civil">
+  <meta property="og:title" content="Credentials &amp; Capabilities — Georgia Civil">
   <meta property="og:url" content="https://grantpeaster.github.io/gci.com/documents.html">
   <meta property="og:image" content="https://grantpeaster.github.io/gci.com/assets/img/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -231,74 +248,86 @@
   <!-- ── HERO ── -->
   <section class="docs-hero">
     <div class="wrap">
-      <h1>Registrations &amp; Documents</h1>
-      <p>Our current professional certifications, licenses, insurance certificates, and compliance documents. Click the download icon to save a copy.</p>
+      <h1>Credentials &amp; Capabilities</h1>
+      <p>Georgia Civil is a licensed and insured firm serving clients across land planning, land surveying, and civil engineering. Download our Capability Statement or request official documentation for bids, project qualification, or compliance.</p>
     </div>
   </section>
 
   <!-- ── BODY ── -->
   <section style="background:#fff; padding-block: clamp(48px,7vw,88px);">
     <div class="wrap">
+      <div class="docs-layout">
 
-      <!-- Download cards — same width as form below -->
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:32px;">
-        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 18px; border:1.5px solid rgba(2,5,52,.12); border-radius:4px; background:#fff; box-sizing:border-box;">
-          <div>
-            <div style="font-family:'Montserrat',sans-serif; font-size:.92rem; font-weight:600; color:#020534; margin-bottom:3px;">Business License</div>
-            <div style="font-family:'Roboto',sans-serif; font-size:.55rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:rgba(2,5,52,.3);">PDF &middot; Pending upload</div>
-          </div>
-          <a href="assets/docs/business-license.pdf" download aria-label="Download Business License"
-             style="flex-shrink:0; width:36px; height:36px; display:flex; align-items:center; justify-content:center; border:1.5px solid rgba(2,5,52,.14); color:#020534; text-decoration:none; pointer-events:none; opacity:.28;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
-          </a>
-        </div>
-        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 18px; border:1.5px solid rgba(2,5,52,.12); border-radius:4px; background:#fff; box-sizing:border-box;">
-          <div>
-            <div style="font-family:'Montserrat',sans-serif; font-size:.92rem; font-weight:600; color:#020534; margin-bottom:3px;">Capability Statement</div>
-            <div style="font-family:'Roboto',sans-serif; font-size:.55rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:rgba(2,5,52,.3);">PDF &middot; Available</div>
-          </div>
-          <a href="assets/docs/capability-statement.pdf" download aria-label="Download Capability Statement"
-             style="flex-shrink:0; width:36px; height:36px; display:flex; align-items:center; justify-content:center; border:1.5px solid rgba(2,5,52,.14); color:#020534; text-decoration:none; transition:border-color .2s, background .2s, color .2s;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Request form — same wrap, directly below -->
-      <div class="doc-request-head">
-        <span class="doc-request-eyebrow">Can't find what you need?</span>
-        <h2>Request a Document</h2>
-        <p>Send us a request and we'll get the right document to you directly.</p>
-      </div>
-      <form class="doc-form" data-contact action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="4c1dc681-6cb8-4efa-bfb8-f94b2a7f37e3">
-        <input type="hidden" name="subject" value="Document Request — Georgia Civil">
-        <input type="hidden" name="to" value="stephanie@georgiacivil.com,chelsea@georgiacivil.com">
-        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="doc-form-row">
-          <div>
-            <label for="dr-name">Name</label>
-            <input id="dr-name" name="name" type="text" required autocomplete="name">
-          </div>
-          <div>
-            <label for="dr-email">Email</label>
-            <input id="dr-email" name="email" type="email" required autocomplete="email">
-          </div>
-        </div>
+        <!-- ── LEFT: Capability overview + download ── -->
         <div>
-          <label for="dr-company">Company / Organization</label>
-          <input id="dr-company" name="company" type="text" autocomplete="organization">
-        </div>
-        <div>
-          <label for="dr-doc">Document(s) requested</label>
-          <input id="dr-doc" name="message" rows="4" type="text" autocomplete="document">
-        </div>
-        <div class="doc-form-submit">
-          <button class="doc-form-btn" type="submit">Send Request &rarr;</button>
-          <p class="doc-form-note">Requests are reviewed by our operations team and fulfilled within one business day.</p>
-        </div>
-      </form>
+          <span class="doc-col-head">Professional Services</span>
 
+          <p style="font-family:'Montserrat',sans-serif; font-size:.92rem; color:rgba(2,5,52,.65); line-height:1.8; margin:0 0 clamp(20px,3vw,28px);">
+            Georgia Civil holds active professional licenses and carries comprehensive general liability and professional liability insurance. Our registered professionals deliver full-service expertise across three disciplines:
+          </p>
+
+          <ul class="cap-list">
+            <li><span class="cap-dot"></span>Land Planning</li>
+            <li><span class="cap-dot"></span>Land Surveying</li>
+            <li><span class="cap-dot"></span>Civil Engineering</li>
+          </ul>
+
+          <span class="doc-section-label">Available to Download</span>
+
+          <div class="doc-card">
+            <div>
+              <div class="doc-card-name">Capability Statement</div>
+              <div class="doc-card-meta">PDF &middot; Available</div>
+            </div>
+            <a href="assets/docs/capability-statement.pdf" download aria-label="Download Capability Statement" class="doc-dl">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- ── RIGHT: Request Official Documentation ── -->
+        <div>
+          <div class="doc-request-head">
+            <span class="doc-request-eyebrow">Bids &middot; Compliance &middot; Project Qualification</span>
+            <h2>Request Official Documentation</h2>
+            <p>Need our business license, certificate of insurance, W-9, or professional license for a bid or project? Fill out the form and we'll get the right documentation to you within one business day.</p>
+          </div>
+
+          <form class="doc-form" data-contact action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="4c1dc681-6cb8-4efa-bfb8-f94b2a7f37e3">
+            <input type="hidden" name="subject" value="Documentation Request — Georgia Civil">
+            <input type="hidden" name="to" value="chelsea@georgiacivil.com,stephanie@georgiacivil.com">
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <div class="doc-form-row">
+              <div>
+                <label for="dr-name">Name</label>
+                <input id="dr-name" name="name" type="text" required autocomplete="name" placeholder="Jane Smith">
+              </div>
+              <div>
+                <label for="dr-email">Email</label>
+                <input id="dr-email" name="email" type="email" required autocomplete="email" placeholder="jane@example.com">
+              </div>
+            </div>
+
+            <div>
+              <label for="dr-company">Company / Organization</label>
+              <input id="dr-company" name="company" type="text" autocomplete="organization" placeholder="Acme Development LLC">
+            </div>
+
+            <div>
+              <label for="dr-doc">What documentation do you need?</label>
+              <textarea id="dr-doc" name="message" rows="4" placeholder="e.g. Business license, certificate of insurance, W-9, professional license, bonding documentation…"></textarea>
+            </div>
+
+            <div class="doc-form-submit">
+              <button class="doc-form-btn" type="submit">Send Request &rarr;</button>
+              <p class="doc-form-note">Requests are reviewed by our operations team and fulfilled within one business day.</p>
+            </div>
+          </form>
+        </div>
+
+      </div>
     </div>
   </section>
 
