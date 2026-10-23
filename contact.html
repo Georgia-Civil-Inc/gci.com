@@ -140,10 +140,9 @@
       </div>
 
       <div class="contact-form-wrap">
-        <form class="contact-fields" id="contact-form">
-          <input type="hidden" id="form-to" name="to" value="chelsea@georgiacivil.com">
-          <input type="hidden" id="form-subject" name="subject" value="New inquiry — Georgia Civil">
-          <input type="hidden" id="form-discipline" name="discipline" value="">
+        <form class="contact-fields" id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact">
+          <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
 
           <div class="form-row">
             <div>
@@ -187,35 +186,7 @@
   <div data-footer></div>
   <script>
     (function () {
-      var checks    = Array.from(document.querySelectorAll('.disc-check'));
-      var subjField = document.getElementById('form-subject');
-      var discField = document.getElementById('form-discipline');
-
-      var DISC_EMAILS = {
-        'Land Planning':     ['todd@georgiacivil.com', 'chelsea@georgiacivil.com'],
-        'Civil Engineering': ['chelsea@georgiacivil.com', 'jason@georgiacivil.com'],
-        'Land Surveying':    ['stephanie@georgiacivil.com', 'brandon@georgiacivil.com']
-      };
-
-      function updateDisciplines() {
-        var selected = checks.filter(function(c){ return c.checked; }).map(function(c){ return c.value; });
-        var label = selected.length ? selected.join(', ') : 'Not sure yet';
-        if (subjField) subjField.value = 'New inquiry \u2014 ' + label + ' \u2014 Georgia Civil';
-        if (discField) discField.value = label;
-        // Collect unique recipients for all checked disciplines
-        var emails = [];
-        selected.forEach(function(disc) {
-          (DISC_EMAILS[disc] || []).forEach(function(email) {
-            if (emails.indexOf(email) === -1) emails.push(email);
-          });
-        });
-        if (!emails.length) emails = ['stephanie@georgiacivil.com', 'chelsea@georgiacivil.com'];
-        var toField = document.getElementById('form-to');
-        if (toField) toField.value = emails.join(',');
-      }
-      checks.forEach(function (cb) {
-        cb.addEventListener('change', updateDisciplines);
-      });
+      var checks = Array.from(document.querySelectorAll('.disc-check'));
 
       /* ── Pre-select a discipline from a query param, e.g. ?service=Land%20Planning ── */
       (function preselectFromQuery() {
@@ -225,8 +196,7 @@
           if (!svc) return;
           var match = checks.filter(function(c){ return c.value.toLowerCase() === svc.toLowerCase(); })[0];
           if (match) { match.checked = true; }
-        } catch (e) { /* no-op if URLSearchParams unsupported */ }
-        updateDisciplines();
+        } catch (e) { /* no-op */ }
       })();
 
       var form      = document.getElementById('contact-form');
@@ -235,27 +205,24 @@
       var submitBtn = form ? form.querySelector('.btn-send') : null;
 
       if (form) {
-        form.addEventListener('submit', async function (e) {
+        form.addEventListener('submit', function(e) {
           e.preventDefault();
           errEl.style.display = 'none';
-          if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending\u2026'; }
-          try {
-            var data = Object.fromEntries(new FormData(form).entries());
-            var res  = await fetch('/contact', {
-              method: 'POST',
-              headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-              body: JSON.stringify(data),
-            });
-            var out = await res.json().catch(function () { return {}; });
-            if (res.ok && out.success) {
+          if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+          fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(new FormData(form)).toString()
+          })
+            .then(function() {
               form.style.display = 'none';
               success.style.display = 'block';
-            } else { throw new Error(out.message || 'failed'); }
-          } catch (err) {
-            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send Message \u2192'; }
-            errEl.textContent = 'Your message could not be sent. Please try again or call 706-342-1104.';
-            errEl.style.display = 'block';
-          }
+            })
+            .catch(function() {
+              if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send Message →'; }
+              errEl.textContent = 'Your message could not be sent. Please try again or call 706-342-1104.';
+              errEl.style.display = 'block';
+            });
         });
       }
     })();
