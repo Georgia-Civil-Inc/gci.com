@@ -165,17 +165,20 @@
       background: #fff;
       padding-block: clamp(56px, 8vw, 104px);
     }
-    .about-bottom-grid {
+    /* Specificity must beat ".about-bottom .wrap" in assets/css/styles.css,
+       which is what actually governs this grid. One column while the news
+       column is hidden; the original two-column layout returns with .has-news. */
+    .about-bottom .wrap.about-bottom-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: clamp(40px, 6vw, 88px);
+      gap: clamp(30px, 4vw, 60px);
       align-items: start;
     }
     /* Careers sits alone while the news column is hidden */
-    .about-bottom-grid:not(.has-news) > div { max-width: 760px; }
-    .about-bottom-grid.has-news { grid-template-columns: 1fr 1fr; }
-    @media (max-width: 860px) {
-      .about-bottom-grid.has-news { grid-template-columns: 1fr; }
+    .about-bottom .wrap.about-bottom-grid:not(.has-news) > div { max-width: 760px; }
+    .about-bottom .wrap.about-bottom-grid.has-news { grid-template-columns: 1fr minmax(320px, 420px); }
+    @media (max-width: 1024px) {
+      .about-bottom .wrap.about-bottom-grid.has-news { grid-template-columns: 1fr; }
     }
 
     /* ── News ── */
