@@ -167,12 +167,15 @@
     }
     .about-bottom-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: clamp(40px, 6vw, 88px);
       align-items: start;
     }
+    /* Careers sits alone while the news column is hidden */
+    .about-bottom-grid:not(.has-news) > div { max-width: 760px; }
+    .about-bottom-grid.has-news { grid-template-columns: 1fr 1fr; }
     @media (max-width: 860px) {
-      .about-bottom-grid { grid-template-columns: 1fr; }
+      .about-bottom-grid.has-news { grid-template-columns: 1fr; }
     }
 
     /* ── News ── */
@@ -351,22 +354,22 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="About GCI — Georgia Civil">
   <meta property="og:description" content="Georgia Civil is an integrated civil engineering, land planning, and land surveying firm based in Madison, GA. Built on better planning.">
-  <meta property="og:url" content="https://grantpeaster.github.io/gci.com/about.html">
-  <meta property="og:image" content="https://grantpeaster.github.io/gci.com/assets/img/og-image.png">
+  <meta property="og:url" content="https://georgiacivil.com/about.html">
+  <meta property="og:image" content="https://georgiacivil.com/assets/img/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://grantpeaster.github.io/gci.com/about.html">
+  <link rel="canonical" href="https://georgiacivil.com/about.html">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "name": "About GCI — Georgia Civil",
-    "url": "https://grantpeaster.github.io/gci.com/about.html",
+    "url": "https://georgiacivil.com/about.html",
     "description": "Georgia Civil, Inc. is an integrated civil engineering, land planning, and land surveying firm based in Madison, Georgia, built on better planning.",
     "breadcrumb": {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://grantpeaster.github.io/gci.com/"},
-        {"@type": "ListItem", "position": 2, "name": "About GCI", "item": "https://grantpeaster.github.io/gci.com/about.html"}
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://georgiacivil.com/"},
+        {"@type": "ListItem", "position": 2, "name": "About GCI", "item": "https://georgiacivil.com/about.html"}
       ]
     }
   }
@@ -505,11 +508,13 @@
   </section>
 
   <!-- ══ NEWS + CAREERS ══ -->
+  <!-- NEWS column is hidden automatically while assets/data/news.json is empty.
+       To publish: add entries to assets/data/news.json. No HTML edit needed. -->
   <section class="about-bottom">
-    <div class="wrap about-bottom-grid">
+    <div class="wrap about-bottom-grid" id="about-bottom-grid">
 
       <!-- News -->
-      <div>
+      <div id="about-news-col" style="display:none">
         <div class="about-news-head">
           <span class="about-eyebrow">From the field</span>
           <h2>Recent News</h2>
@@ -544,11 +549,10 @@
           <h2>Interested in Joining Our Team?</h2>
           <p>We welcome people who take ownership of their work, communicate well, and want to keep learning. Tell us where you could contribute.</p>
         </div>
-        <form class="about-form" data-contact action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
-          <input type="hidden" name="access_key" value="4c1dc681-6cb8-4efa-bfb8-f94b2a7f37e3">
+        <form class="about-form" data-contact id="careers-form" name="careers" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="careers">
           <input type="hidden" name="subject" value="New careers inquiry — Georgia Civil">
-          <input type="hidden" name="to" value="stephanie@georgiacivil.com,chelsea@georgiacivil.com">
-          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
           <div class="about-form-row">
             <div>
               <label for="c-name">Name</label>
@@ -587,7 +591,14 @@
           <div class="about-form-submit">
             <button class="about-form-btn" type="submit">Introduce Yourself &rarr;</button>
           </div>
+          <p id="careers-err" style="display:none; margin-top:14px; font-family:'Montserrat',sans-serif; font-size:.85rem; color:#CA2131; line-height:1.6;"></p>
         </form>
+
+        <!-- Success message (hidden until the form submits) -->
+        <div id="careers-success" style="display:none; padding:28px 24px; border:1.5px solid rgba(2,5,52,.1); background:#fafafa;">
+          <p style="font-family:'Montserrat',sans-serif; font-size:.92rem; font-weight:600; color:#020534; margin:0 0 8px;">Thanks — we have your note.</p>
+          <p style="font-family:'Montserrat',sans-serif; font-size:.85rem; color:rgba(2,5,52,.6); line-height:1.7; margin:0;">Someone from our team will be in touch. If it's time-sensitive, call us at 706-342-1104.</p>
+        </div>
       </div>
 
     </div>
@@ -598,11 +609,42 @@
     (function() {
       var checks = document.querySelectorAll('input[name="interest"]');
       var subj   = document.querySelector('input[name="subject"]');
-      function updateSubject() {
-        var selected = Array.from(checks).filter(function(c){ return c.checked; }).map(function(c){ return c.value; });
-        subj.value = 'New careers inquiry' + (selected.length ? ' — ' + selected.join(', ') : '') + ' — Georgia Civil';
+      if (subj) {
+        var updateSubject = function () {
+          var selected = Array.from(checks).filter(function(c){ return c.checked; }).map(function(c){ return c.value; });
+          subj.value = 'New careers inquiry' + (selected.length ? ' — ' + selected.join(', ') : '') + ' — Georgia Civil';
+        };
+        checks.forEach(function(cb){ cb.addEventListener('change', updateSubject); });
       }
-      checks.forEach(function(cb){ cb.addEventListener('change', updateSubject); });
+
+      /* Netlify Forms submit — same pattern as contact.html and documents.html */
+      var form      = document.getElementById('careers-form');
+      var success   = document.getElementById('careers-success');
+      var errEl     = document.getElementById('careers-err');
+      var submitBtn = form ? form.querySelector('.about-form-btn') : null;
+      if (!form) return;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (errEl) errEl.style.display = 'none';
+        if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form)).toString()
+        })
+          .then(function () {
+            form.style.display = 'none';
+            if (success) success.style.display = 'block';
+          })
+          .catch(function () {
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = 'Introduce Yourself &rarr;'; }
+            if (errEl) {
+              errEl.textContent = 'Your note could not be sent. Please try again or call 706-342-1104.';
+              errEl.style.display = 'block';
+            }
+          });
+      });
     })();
   </script>
   <script>
@@ -666,6 +708,12 @@
           .filter(function (p) { return p && p.date && !isNaN(new Date(p.date)) && new Date(p.date) >= cutoff; })
           .sort(function (a, b) { return new Date(b.date) - new Date(a.date); });
         if (!posts.length) return;
+
+        /* News exists — reveal the column and restore the two-column layout */
+        var newsCol  = document.getElementById('about-news-col');
+        var gridWrap = document.getElementById('about-bottom-grid');
+        if (newsCol)  newsCol.style.display = '';
+        if (gridWrap) gridWrap.classList.add('has-news');
 
         grid.innerHTML = renderSlice(posts, 0);
         if (posts.length <= SLOTS) return;

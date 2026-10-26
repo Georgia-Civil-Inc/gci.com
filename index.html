@@ -220,18 +220,18 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Georgia Civil — Built on Better Planning">
   <meta property="og:description" content="Integrated civil engineering, land planning, and land surveying firm based in Madison, GA — serving Morgan County and communities across north and central Georgia.">
-  <meta property="og:url" content="https://grantpeaster.github.io/gci.com/">
-  <meta property="og:image" content="https://grantpeaster.github.io/gci.com/assets/img/og-image.png">
+  <meta property="og:url" content="https://georgiacivil.com/">
+  <meta property="og:image" content="https://georgiacivil.com/assets/img/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://grantpeaster.github.io/gci.com/">
+  <link rel="canonical" href="https://georgiacivil.com/">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Georgia Civil, Inc.",
     "alternateName": "GCI",
-    "url": "https://grantpeaster.github.io/gci.com/",
-    "logo": "https://grantpeaster.github.io/gci.com/assets/img/logo.png",
+    "url": "https://georgiacivil.com/",
+    "logo": "https://georgiacivil.com/assets/img/logo.png",
     "description": "Georgia Civil, Inc. is an integrated civil engineering, land planning, and land surveying firm based in Madison, Georgia — serving Morgan County, Putnam County, Butts County, and communities across north and central Georgia. Built on better planning.",
     "slogan": "Built on Better Planning",
     "foundingLocation": "Madison, GA",
@@ -453,8 +453,10 @@
     </div>
   </section>
 
-  <!-- NEWS — hidden at launch; re-enable when Q4 LinkedIn posts are live (remove style="display:none") -->
-  <section class="section-blue section-topo-dark" style="display:none; padding-block: clamp(48px,7vw,96px); margin-top: 48px;">
+  <!-- NEWS — hidden automatically while assets/data/news.json is empty.
+       To publish: add entries to assets/data/news.json. No HTML edit needed;
+       this section reveals itself, and so does the one on about.html. -->
+  <section class="section-blue section-topo-dark" id="home-news" style="display:none; padding-block: clamp(48px,7vw,96px); margin-top: 48px;">
     <div class="wrap">
       <div style="margin-bottom: 40px;">
         <span style="display:inline-block;font-family:'Roboto',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:.75rem;">Georgia Civil</span>
@@ -553,6 +555,10 @@
           .sort(function (a, b) { return new Date(b.date) - new Date(a.date); });
 
         if (!posts.length) return;
+
+        /* News exists — reveal the section (hidden by default at launch) */
+        var homeNews = document.getElementById('home-news');
+        if (homeNews) homeNews.style.display = '';
 
         /* Overwrite whatever main.js rendered */
         grid.innerHTML = renderSlide(posts, 0);

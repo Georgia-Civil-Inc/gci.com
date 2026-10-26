@@ -1,0 +1,14 @@
+[
+  {
+    "date": "2026-10-30",
+    "title": "EXAMPLE — replace with your LinkedIn post headline",
+    "blurb": "One or two sentences summarising the post. Keep it under about 160 characters.",
+    "url": "https://www.linkedin.com/posts/PASTE-THE-REAL-POST-URL-HERE"
+  },
+  {
+    "date": "2026-10-28",
+    "title": "EXAMPLE — a second post",
+    "blurb": "The \"image\" field is optional and currently unused; the cards are text only.",
+    "url": "https://www.linkedin.com/posts/PASTE-THE-REAL-POST-URL-HERE"
+  }
+]
