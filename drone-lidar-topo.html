@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drone LiDAR Topo on Wooded Ground | Georgia Civil Survey</title>
+  <meta name="description" content="Drone LiDAR collects ground elevations beneath heavy tree canopy with far less fieldwork than a conventional survey. Request a quote and flight date from Georgia Civil.">
+  <!-- Unlisted campaign landing page: not in navigation, sitemap, or search results. -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <meta name="theme-color" content="#CA2131">
+  <style>
+    .lp-header { position: sticky; top: 0; z-index: 50; background: #fff; border-bottom: 1px solid var(--line); }
+    .lp-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 64px; }
+    .lp-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--blue); font-family: var(--body); font-weight: 700; font-size: .95rem; }
+    .lp-brand img { width: 44px; height: 44px; object-fit: contain; background: var(--red); border-radius: 4px; padding: 3px; }
+    .lp-nav { display: flex; align-items: center; gap: clamp(14px, 2.4vw, 30px); }
+    .lp-nav a:not(.btn) { font-family: var(--body); font-size: .82rem; font-weight: 500; color: var(--blue); text-decoration: none; }
+    .lp-nav a:not(.btn):hover { color: var(--red); }
+    .lp-nav .btn { padding: 10px 18px; font-size: .68rem; }
+    @media (max-width: 760px) { .lp-nav a:not(.btn) { display: none; } }
+
+    .lp-hero { position: relative; overflow: hidden; background: var(--red); color: #fff; padding-block: clamp(56px, 9vw, 120px); }
+    .lp-hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(135deg, rgba(255,255,255,.04) 0 1px, transparent 1px 16px); pointer-events: none; }
+    .lp-hero .wrap { position: relative; z-index: 1; }
+    .lp-eyebrow { display: block; font-family: var(--utility); font-size: .66rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 20px; }
+    .lp-hero .lp-eyebrow { color: rgba(255,255,255,.85); }
+    .lp-hero h1 { color: #fff; max-width: 17ch; line-height: 1.08; font-size: clamp(2.4rem, 5.6vw, 4.2rem); margin: 0 0 22px; }
+    .lp-hero p.lede { max-width: 54ch; font-family: var(--body); font-size: clamp(.98rem, 1.4vw, 1.1rem); line-height: 1.7; color: rgba(255,255,255,.92); margin: 0 0 30px; }
+    .lp-cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn-white { background: #fff; color: var(--red); }
+    .btn-white:hover { background: var(--paper); }
+
+    .lp-section { padding-block: clamp(48px, 6.5vw, 88px); }
+    .lp-paper { background: var(--paper); }
+    .lp-navy { background: var(--blue); color: #fff; }
+    .lp-section h2 { font-size: clamp(1.7rem, 3.2vw, 2.5rem); line-height: 1.15; margin: 0 0 14px; }
+    .lp-intro { max-width: 60ch; font-family: var(--body); font-size: .95rem; line-height: 1.7; color: var(--ink-70); margin: 0 0 clamp(24px, 3.5vw, 40px); }
+        .lp-navy h2 { color: #fff; }
+    .lp-section .lp-eyebrow { color: var(--red); }
+    .lp-section.lp-navy .lp-eyebrow { color: var(--brass); }
+
+    .lp-views { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .lp-fig { margin: 0; }
+    .lp-fig img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; background: #000; border: 1px solid var(--line); }
+    .lp-fig figcaption { font-family: var(--body); font-weight: 600; font-size: .84rem; color: var(--blue); margin-top: 10px; }
+    .lp-note { font-family: var(--body); font-size: .78rem; color: var(--gray); margin: 18px 0 0; }
+    @media (max-width: 900px) { .lp-views { grid-template-columns: repeat(2, 1fr); } }
+
+    .lp-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .lp-card { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 26px 24px; }
+    .lp-card h3 { font-family: var(--body); font-size: 1rem; font-weight: 700; line-height: 1.3; color: var(--blue); margin: 0 0 10px; }
+    .lp-card p { font-family: var(--body); font-size: .88rem; line-height: 1.65; color: var(--ink-70); margin: 0; }
+    @media (max-width: 860px) { .lp-cards { grid-template-columns: 1fr; } }
+
+    .lp-why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .lp-why-card { border: 1px solid rgba(255,255,255,.14); border-radius: 6px; padding: 26px 24px; background: rgba(255,255,255,.04); }
+    .lp-why-card.hot { background: var(--red); border-color: var(--red); }
+    .lp-why-card .lp-tag { display: block; font-family: var(--utility); font-size: .62rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--brass); margin-bottom: 12px; }
+    .lp-why-card.hot .lp-tag { color: rgba(255,255,255,.85); }
+    .lp-why-card h3 { font-family: var(--body); font-size: 1.05rem; font-weight: 700; line-height: 1.3; color: #fff; margin: 0 0 10px; }
+    .lp-why-card p { font-family: var(--body); font-size: .86rem; line-height: 1.65; color: rgba(255,255,255,.8); margin: 0; }
+    @media (max-width: 860px) { .lp-why { grid-template-columns: 1fr; } }
+
+    .lp-ba { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .lp-ba .lp-fig img { aspect-ratio: 3 / 2; }
+    @media (max-width: 700px) { .lp-ba { grid-template-columns: 1fr; } }
+
+    .lp-deliv { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 64px); align-items: start; }
+    .lp-deliv-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .lp-deliv-list div { background: #fff; border-radius: 4px; padding: 16px 18px; font-family: var(--body); font-size: .86rem; color: var(--ink-70); }
+    .lp-deliv-list .formats { grid-column: 1 / -1; background: var(--blue); color: #fff; font-weight: 600; letter-spacing: .02em; }
+    @media (max-width: 860px) { .lp-deliv { grid-template-columns: 1fr; } }
+    @media (max-width: 480px) { .lp-deliv-list { grid-template-columns: 1fr; } }
+
+    .lp-quote { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 64px); align-items: start; }
+    .lp-quote p.lp-intro { margin-bottom: 0; }
+    .lp-form { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: clamp(20px, 3vw, 32px); display: grid; gap: 16px; }
+    .lp-form label, .lp-form legend { display: block; font-family: var(--body); font-size: .76rem; font-weight: 600; color: var(--blue); margin-bottom: 6px; padding: 0; }
+    .lp-form input[type=text], .lp-form input[type=email], .lp-form input[type=tel], .lp-form select, .lp-form textarea {
+      width: 100%; font: inherit; font-family: var(--body); font-size: .9rem; color: var(--blue);
+      background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 11px 12px; }
+    .lp-form textarea { resize: vertical; min-height: 96px; }
+    .lp-form input:focus, .lp-form select:focus, .lp-form textarea:focus { outline: 2px solid var(--blue); outline-offset: 1px; }
+    .lp-form fieldset { border: 0; margin: 0; padding: 0; }
+    .lp-checks { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+    .lp-checks label { display: inline-flex; align-items: center; gap: 7px; font-weight: 500; margin: 0; }
+    .lp-form .btn { justify-self: start; border: 0; }
+    .lp-form .btn[disabled] { opacity: .6; cursor: default; }
+    .lp-err { display: none; font-family: var(--body); font-size: .85rem; color: var(--red); margin: 0; }
+    .lp-success { display: none; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: clamp(24px, 3vw, 36px); font-family: var(--body); font-size: .95rem; line-height: 1.65; color: var(--ink-70); }
+    .lp-success strong { display: block; font-family: var(--display); font-size: 1.4rem; color: var(--blue); margin-bottom: 8px; }
+    @media (max-width: 860px) { .lp-quote { grid-template-columns: 1fr; } }
+    @media (max-width: 520px) { .lp-form .form-row { grid-template-columns: 1fr; } }
+
+    .lp-footer { background: var(--blue); color: rgba(255,255,255,.85); padding-block: 26px; font-family: var(--body); font-size: .78rem; }
+    .lp-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; }
+    .lp-footer a { color: rgba(255,255,255,.85); text-decoration: none; }
+    .lp-footer a:hover { color: #fff; }
+    .lp-footer strong { color: #fff; }
+  </style>
+</head>
+<body>
+
+  <header class="lp-header">
+    <div class="wrap">
+      <a class="lp-brand" href="#top" aria-label="Georgia Civil Survey">
+        <img src="assets/img/logo.png" alt="" width="44" height="44">
+        <span>GCI Survey</span>
+      </a>
+      <nav class="lp-nav" aria-label="Page sections">
+        <a href="#what-lidar-sees">What LiDAR sees</a>
+        <a href="#why-drone-lidar">Why drone LiDAR</a>
+        <a href="#deliverables">Deliverables</a>
+        <a class="btn btn-accent" href="#quote">Get a quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="lp-hero">
+      <div class="wrap">
+        <span class="lp-eyebrow">Drone LiDAR &middot; Land Surveying</span>
+        <h1>Topo on wooded ground, without weeks in the field.</h1>
+        <p class="lede">Our drone LiDAR collects ground elevations beneath heavy tree canopy, with far less fieldwork than a conventional survey. You get existing topography early, often for less than fixed-wing LiDAR, from a licensed land surveyor.</p>
+        <div class="lp-cta-row">
+          <a class="btn btn-white" href="#quote">Get a quote and flight date</a>
+          <a class="btn btn-ghost" href="#what-lidar-sees">See what LiDAR sees</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="lp-section lp-paper" id="what-lidar-sees">
+      <div class="wrap">
+        <span class="lp-eyebrow">What you see vs. what LiDAR sees</span>
+        <h2>One wooded site, four views.</h2>
+        <p class="lp-intro">Same site, same angle. The drone photo shows the canopy. The LiDAR shows everything it captured, then just the ground, then contours ready for design.</p>
+        <div class="lp-views">
+          <figure class="lp-fig"><img src="assets/img/survey/covnorth-photo-0086.jpg" alt="Drone photo of a heavily wooded site next to a road" loading="lazy"><figcaption>What you see</figcaption></figure>
+          <figure class="lp-fig"><img src="assets/img/survey/covnorth-lidar-trees-0086.jpg" alt="LiDAR point cloud of the site including trees, colored by elevation" loading="lazy"><figcaption>Everything the drone captured</figcaption></figure>
+          <figure class="lp-fig"><img src="assets/img/survey/covnorth-lidar-ground-0086.jpg" alt="LiDAR point cloud with trees removed showing only the ground surface" loading="lazy"><figcaption>The ground under the trees</figcaption></figure>
+          <figure class="lp-fig"><img src="assets/img/survey/covnorth-contours.jpg" alt="Contour lines generated from the bare-earth LiDAR surface" loading="lazy"><figcaption>Ready for design</figcaption></figure>
+        </div>
+        <p class="lp-note">Site anonymized. Images are from a recent GCI flight.</p>
+      </div>
+    </section>
+
+    <section class="lp-section">
+      <div class="wrap">
+        <h2>Built for the people who need real grades early.</h2>
+        <div class="lp-cards" style="margin-top:clamp(24px,3.5vw,40px)">
+          <div class="lp-card">
+            <h3>Developers and owners</h3>
+            <p>Helping identify development opportunities, uncover potential challenges, and make informed decisions.</p>
+          </div>
+          <div class="lp-card">
+            <h3>Sitework and grading contractors</h3>
+            <p>An existing-ground surface to check against the plans and verify quantities before you move dirt.</p>
+          </div>
+          <div class="lp-card">
+            <h3>Civil engineers and planners</h3>
+            <p>Topo in hand when design starts, delivered clean with accuracy you can trust.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lp-section lp-navy" id="why-drone-lidar">
+      <div class="wrap">
+        <span class="lp-eyebrow">Why drone LiDAR</span>
+        <h2 style="max-width:20ch">Faster topo, for less, from your surveyor.</h2>
+        <div class="lp-why" style="margin-top:clamp(24px,3.5vw,40px)">
+          <div class="lp-why-card hot">
+            <span class="lp-tag">Save time</span>
+            <h3>Far less fieldwork under canopy.</h3>
+            <p>No weeks of cutting lines through the woods. Topo arrives while layout, lot yield and roads are still being decided.</p>
+          </div>
+          <div class="lp-why-card">
+            <span class="lp-tag">Save money</span>
+            <h3>Denser data than fixed-wing LiDAR.</h3>
+            <p>Lower-altitude flights are sized for individual tracts and often cost less, and earthwork numbers start from the real ground.</p>
+          </div>
+          <div class="lp-why-card">
+            <span class="lp-tag">Accurate</span>
+            <h3>From a licensed land surveyor.</h3>
+            <p>Tied to established survey control, with conventional field survey where it&rsquo;s needed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lp-section">
+      <div class="wrap">
+        <span class="lp-eyebrow">Before the first tree came down</span>
+        <h2 style="max-width:22ch">Flown before clearing. Built on that ground.</h2>
+        <p class="lp-intro">We flew this site with drone LiDAR while it was still wooded. The existing-ground surface went into design, and the site is now under construction.</p>
+        <div class="lp-ba">
+          <figure class="lp-fig"><img src="assets/img/survey/k5-lidar-before-0196.jpg" alt="Drone LiDAR point cloud of the wooded site before clearing" loading="lazy"><figcaption>Before: drone LiDAR of the wooded site</figcaption></figure>
+          <figure class="lp-fig"><img src="assets/img/survey/k5-photo-now-0196.jpg" alt="Aerial photo of the same site under construction" loading="lazy"><figcaption>Now: the same site under construction</figcaption></figure>
+        </div>
+        <p class="lp-note">Public project, anonymized.</p>
+      </div>
+    </section>
+
+    <section class="lp-section lp-paper" id="deliverables">
+      <div class="wrap lp-deliv">
+        <div>
+          <span class="lp-eyebrow">Deliverables</span>
+          <h2>What comes back.</h2>
+          <p class="lp-intro" style="margin-bottom:0">Delivered in the format your design or takeoff software uses.</p>
+        </div>
+        <div class="lp-deliv-list">
+          <div>Bare-earth surface</div>
+          <div>Contours</div>
+          <div>Classified point cloud</div>
+          <div>Existing-ground surface for takeoff</div>
+          <div>Design-ready topo in CAD</div>
+          <div class="formats">.DWG &middot; .TIN &middot; .LAS &middot; LandXML</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lp-section" id="quote">
+      <div class="wrap lp-quote">
+        <div>
+          <span class="lp-eyebrow">Send us the parcel</span>
+          <h2>We&rsquo;ll send a quote and flight date.</h2>
+          <p class="lp-intro">Send a parcel ID or address and tell us what you need delivered. We&rsquo;ll come back with a price and the date we can fly it.</p>
+        </div>
+
+        <div>
+          <!-- Netlify Forms. Submissions are routed by the Power Automate flow, same as the contact form. -->
+          <form class="lp-form" id="survey-form" name="survey-lidar-quote" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="survey-lidar-quote">
+            <input type="hidden" name="discipline" value="Land Surveying">
+            <input type="hidden" name="landing_page" value="drone-lidar-topo">
+            <input type="hidden" name="utm_source" id="utm_source" value="">
+            <input type="hidden" name="utm_medium" id="utm_medium" value="">
+            <input type="hidden" name="utm_campaign" id="utm_campaign" value="">
+            <input type="hidden" name="utm_content" id="utm_content" value="">
+            <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+            <div class="form-row">
+              <div><label for="sf-name">Name</label><input id="sf-name" name="name" type="text" required autocomplete="name"></div>
+              <div><label for="sf-company">Company</label><input id="sf-company" name="company" type="text" autocomplete="organization"></div>
+            </div>
+            <div class="form-row">
+              <div><label for="sf-email">Email</label><input id="sf-email" name="email" type="email" required autocomplete="email"></div>
+              <div><label for="sf-phone">Phone</label><input id="sf-phone" name="phone" type="tel" autocomplete="tel"></div>
+            </div>
+            <div>
+              <label for="sf-location">Parcel ID or site address</label>
+              <input id="sf-location" name="location" type="text" required>
+            </div>
+            <div class="form-row">
+              <div>
+                <label for="sf-role">You are a</label>
+                <select id="sf-role" name="client_type">
+                  <option>Developer or owner</option>
+                  <option>Civil engineer or planner</option>
+                  <option>Sitework or grading contractor</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div>
+                <label for="sf-when">When do you need topo?</label>
+                <select id="sf-when" name="timeline">
+                  <option>As soon as possible</option>
+                  <option>Within 30 days</option>
+                  <option>1&ndash;3 months</option>
+                  <option>Just exploring</option>
+                </select>
+              </div>
+            </div>
+            <fieldset>
+              <legend>Formats you need</legend>
+              <div class="lp-checks">
+                <label><input type="checkbox" name="formats" value=".DWG"> .DWG</label>
+                <label><input type="checkbox" name="formats" value=".TIN"> .TIN</label>
+                <label><input type="checkbox" name="formats" value=".LAS"> .LAS</label>
+                <label><input type="checkbox" name="formats" value="LandXML"> LandXML</label>
+                <label><input type="checkbox" name="formats" value="Not sure yet"> Not sure yet</label>
+              </div>
+            </fieldset>
+            <div>
+              <label for="sf-message">Anything else we should know?</label>
+              <textarea id="sf-message" name="message" placeholder="Acreage, tree cover, deadlines, who's designing it"></textarea>
+            </div>
+            <button class="btn btn-accent" type="submit" id="sf-submit">Get a quote and flight date</button>
+            <p class="lp-err" id="sf-err" role="alert"></p>
+          </form>
+
+          <div class="lp-success" id="sf-success" role="status">
+            <strong>Thank you.</strong>
+            We have your request. A member of our survey team will follow up with a quote and flight date. If it&rsquo;s urgent, call <a href="tel:+17063421104" style="color:var(--red)">(706) 342-1104</a>.
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="lp-footer">
+    <div class="wrap">
+      <span><strong>Georgia Civil, Inc.</strong> &middot; Land Surveying &middot; 311 N. Main Street, Madison, GA 30650 &middot; <a href="tel:+17063421104">(706) 342-1104</a></span>
+      <a href="index.html">georgiacivil.com</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById('survey-form');
+      if (!form) return;
+      var success = document.getElementById('sf-success');
+      var errEl = document.getElementById('sf-err');
+      var btn = document.getElementById('sf-submit');
+
+      // Capture campaign tags (?utm_source=linkedin&utm_medium=social&utm_campaign=q4-survey&utm_content=post1)
+      try {
+        var params = new URLSearchParams(window.location.search);
+        ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'].forEach(function (k) {
+          var el = document.getElementById(k);
+          if (el && params.get(k)) el.value = params.get(k);
+        });
+      } catch (e) { /* no-op */ }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        errEl.style.display = 'none';
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(new FormData(form)).toString()
+        })
+          .then(function (res) {
+            if (!res.ok) throw new Error('bad status');
+            form.style.display = 'none';
+            success.style.display = 'block';
+            success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          })
+          .catch(function () {
+            btn.disabled = false;
+            btn.textContent = 'Get a quote and flight date';
+            errEl.textContent = 'Your request could not be sent. Please try again or call (706) 342-1104.';
+            errEl.style.display = 'block';
+          });
+      });
+    })();
+  </script>
+</body>
+</html>
