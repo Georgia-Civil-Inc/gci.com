@@ -50,6 +50,7 @@
     .lp-views { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
     .lp-fig { margin: 0; }
     .lp-fig img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; background: #000; }
+    .lp-fig img.pc { object-fit: contain; }
     .lp-fig figcaption { font-family: var(--body); font-weight: 600; font-size: .84rem; color: var(--blue); margin-top: 10px; }
     .lp-note { font-family: var(--body); font-size: .78rem; color: var(--gray); margin: 18px 0 0; }
     @media (max-width: 900px) { .lp-views { grid-template-columns: repeat(2, 1fr); } }
@@ -145,8 +146,8 @@
         <p class="lp-intro">Same site, same angle. The drone photo shows the canopy. The LiDAR shows everything it captured, then just the ground, then contours ready for design.</p>
         <div class="lp-views">
           <figure class="lp-fig"><img src="assets/img/survey/view-1-photo.jpg" alt="Drone photo of a heavily wooded site next to a road" loading="lazy"><figcaption>What you see</figcaption></figure>
-          <figure class="lp-fig"><img src="assets/img/survey/view-2-all-points.jpg" alt="LiDAR point cloud of the site including trees, colored by elevation" loading="lazy"><figcaption>Everything the drone captured</figcaption></figure>
-          <figure class="lp-fig"><img src="assets/img/survey/view-3-ground.jpg" alt="LiDAR point cloud with trees removed showing only the ground surface" loading="lazy"><figcaption>The ground under the trees</figcaption></figure>
+          <figure class="lp-fig"><img class="pc" src="assets/img/survey/view-2-all-points.jpg" alt="LiDAR point cloud of the site including trees, colored by elevation" loading="lazy"><figcaption>Everything the drone captured</figcaption></figure>
+          <figure class="lp-fig"><img class="pc" src="assets/img/survey/view-3-ground.jpg" alt="LiDAR point cloud with trees removed showing only the ground surface" loading="lazy"><figcaption>The ground under the trees</figcaption></figure>
           <figure class="lp-fig"><img src="assets/img/survey/view-4-contours.jpg" alt="Contour lines generated from the bare-earth LiDAR surface" loading="lazy"><figcaption>Ready for design</figcaption></figure>
         </div>
         <p class="lp-note">Site anonymized. Images are from a recent GCI flight.</p>
