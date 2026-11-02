@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drone LiDAR Topo on Wooded Ground | Georgia Civil Survey</title>
-  <meta name="description" content="Drone LiDAR collects ground elevations beneath heavy tree canopy with far less fieldwork than a conventional survey. Request a quote and flight date from Georgia Civil.">
-  <!-- Unlisted campaign landing page: not in navigation, sitemap, or search results. -->
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Wooded-site topo in days, tied to survey control. Drone LiDAR from licensed land surveyors. Request a quote and flight date from Georgia Civil.">
+  <!-- Unlisted campaign landing page: not in navigation or sitemap; noindex keeps it out of search results. -->
+  <meta name="robots" content="noindex, follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -69,6 +69,13 @@
     .lp-why-card p { font-family: var(--body); font-size: .86rem; line-height: 1.65; color: rgba(255,255,255,.8); margin: 0; }
     @media (max-width: 860px) { .lp-why { grid-template-columns: 1fr; } }
 
+    .lp-days { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .lp-day { background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 22px 18px; display: flex; flex-direction: column; gap: 2px; }
+    .lp-day .num { font-family: var(--display); font-weight: 700; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.05; color: var(--red); }
+    .lp-day .unit { font-family: var(--utility); font-size: .62rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--gray); margin-bottom: 10px; }
+    .lp-day .size { font-family: var(--body); font-size: .9rem; font-weight: 600; color: var(--blue); }
+    @media (max-width: 600px) { .lp-days { grid-template-columns: repeat(2, 1fr); gap: 10px; } .lp-day { padding: 18px 14px; } }
+
     .lp-ba { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .lp-ba .lp-fig img { aspect-ratio: 3 / 2; }
     @media (max-width: 700px) { .lp-ba { grid-template-columns: 1fr; } }
@@ -117,7 +124,7 @@
       </a>
       <nav class="lp-nav" aria-label="Page sections">
         <a href="#what-lidar-sees">What LiDAR sees</a>
-        <a href="#why-drone-lidar">Why drone LiDAR</a>
+        <a href="#why">Why Georgia Civil</a>
         <a href="#deliverables">Deliverables</a>
         <a class="btn btn-accent" href="#quote">Get a quote</a>
       </nav>
@@ -129,8 +136,8 @@
     <section class="lp-hero">
       <div class="wrap">
         <span class="lp-eyebrow">Drone LiDAR &middot; Land Surveying</span>
-        <h1>Topo on wooded ground, without weeks in the field.</h1>
-        <p class="lede">Our drone LiDAR collects ground elevations beneath heavy tree canopy, with far less fieldwork than a conventional survey. You get existing topography early, often for less than fixed-wing LiDAR, from a licensed land surveyor.</p>
+        <h1>Wooded-site topo in days, tied to survey control.</h1>
+        <p class="lede">We fly drone LiDAR low over the site for denser ground data than fixed-wing, tie every flight to our own survey control and field-check what matters. Quote within 24 hours; a typical wooded tract is delivered in days, by licensed land surveyors.</p>
         <div class="lp-cta-row">
           <a class="btn btn-white" href="#quote">Get a quote and flight date</a>
           <a class="btn btn-ghost" href="#what-lidar-sees">See what LiDAR sees</a>
@@ -173,26 +180,44 @@
       </div>
     </section>
 
-    <section class="lp-section lp-navy" id="why-drone-lidar">
+    <section class="lp-section lp-navy" id="why">
       <div class="wrap">
-        <span class="lp-eyebrow">Why drone LiDAR</span>
-        <h2 style="max-width:20ch">Faster topo, for less, from your surveyor.</h2>
+        <span class="lp-eyebrow">Why Georgia Civil</span>
+        <h2 style="max-width:22ch">Quicker and more accurate, from your surveyor.</h2>
         <div class="lp-why" style="margin-top:clamp(24px,3.5vw,40px)">
           <div class="lp-why-card hot">
-            <span class="lp-tag">Save time</span>
-            <h3>Far less fieldwork under canopy.</h3>
-            <p>No weeks of cutting lines through the woods. Topo arrives while layout, lot yield and roads are still being decided.</p>
+            <span class="lp-tag">Quicker</span>
+            <h3>Quote in 24 hours. Topo in days.</h3>
+            <p>Send the parcel and we&rsquo;ll reply within 24 hours with a price and a flight date. A typical 50-acre wooded tract takes about 3 to 4 working days from flight to finished topo.</p>
           </div>
           <div class="lp-why-card">
-            <span class="lp-tag">Save money</span>
-            <h3>Denser data than fixed-wing LiDAR.</h3>
-            <p>Lower-altitude flights are sized for individual tracts and often cost less, and earthwork numbers start from the real ground.</p>
+            <span class="lp-tag">More accurate</span>
+            <h3>Denser than fixed-wing, tied to our control.</h3>
+            <p>Lower-altitude flights capture more ground points under the canopy. Every flight is tied to our survey control, and we field-run what matters most, like roadway tie-ins.</p>
           </div>
           <div class="lp-why-card">
-            <span class="lp-tag">Accurate</span>
-            <h3>From a licensed land surveyor.</h3>
-            <p>Tied to established survey control, with conventional field survey where it&rsquo;s needed.</p>
+            <span class="lp-tag">Cost-effective</span>
+            <h3>Sized for a single tract.</h3>
+            <p>Often more cost-effective than a fixed-wing flight for an individual site, with deliverables from a licensed land surveyor.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lp-section lp-paper" id="turnaround">
+      <div class="wrap">
+        <span class="lp-eyebrow">Typical turnaround</span>
+        <h2>How long a wooded tract typically takes.</h2>
+        <p class="lp-intro">Typical working days of flight and office time, from flight to finished topo. Every site is different; your quote confirms the schedule.</p>
+        <div class="lp-days">
+          <div class="lp-day"><span class="num">1.5</span><span class="unit">days</span><span class="size">Up to 2 acres</span></div>
+          <div class="lp-day"><span class="num">2.5</span><span class="unit">days</span><span class="size">10 acres</span></div>
+          <div class="lp-day"><span class="num">2.5</span><span class="unit">days</span><span class="size">30 acres</span></div>
+          <div class="lp-day"><span class="num">3.5</span><span class="unit">days</span><span class="size">50 acres</span></div>
+          <div class="lp-day"><span class="num">6</span><span class="unit">days</span><span class="size">100 acres</span></div>
+          <div class="lp-day"><span class="num">12</span><span class="unit">days</span><span class="size">200 acres</span></div>
+          <div class="lp-day"><span class="num">30</span><span class="unit">days</span><span class="size">500 acres</span></div>
+          <div class="lp-day"><span class="num">50</span><span class="unit">days</span><span class="size">1,000 acres</span></div>
         </div>
       </div>
     </section>
@@ -233,7 +258,7 @@
         <div>
           <span class="lp-eyebrow">Send us the parcel</span>
           <h2>We&rsquo;ll send a quote and flight date.</h2>
-          <p class="lp-intro">Send a parcel ID or address and tell us what you need delivered. We&rsquo;ll come back with a price and the date we can fly it.</p>
+          <p class="lp-intro">Send a parcel ID or address and tell us what you need delivered. <strong>We&rsquo;ll reply within 24 hours</strong> with a price and the date we can fly it.</p>
         </div>
 
         <div>
@@ -299,8 +324,7 @@
           </form>
 
           <div class="lp-success" id="sf-success" role="status">
-            <strong>Thank you.</strong>
-            We have your request. A member of our survey team will follow up with a quote and flight date. If it&rsquo;s urgent, call <a href="tel:+17063421104" style="color:var(--red)">(706) 342-1104</a>.
+            Thanks. We&rsquo;ll look at the parcel and reply within 24 hours with a quote and a flight date.
           </div>
         </div>
       </div>
