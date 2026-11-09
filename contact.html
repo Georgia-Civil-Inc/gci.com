@@ -104,7 +104,7 @@
   </div>
 
   <section class="contact-body">
-    <div class="wrap contact-layout">
+    <form class="wrap contact-layout" id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
 
       <div class="contact-context">
         <span class="eyebrow">Contact</span>
@@ -114,25 +114,25 @@
         <div class="disc-selector" id="disc-selector" role="group" aria-label="Select disciplines">
           <div class="disc-option">
             <div class="disc-option-inner">
-              <input type="checkbox" id="disc-lp" name="discipline" value="Land Planning" class="disc-check" form="contact-form">
+              <input type="checkbox" id="disc-lp" name="discipline" value="Land Planning" class="disc-check">
               <label for="disc-lp" class="disc-label">Land Planning</label>
             </div>
           </div>
           <div class="disc-option">
             <div class="disc-option-inner">
-              <input type="checkbox" id="disc-ce" name="discipline" value="Civil Engineering" class="disc-check" form="contact-form">
+              <input type="checkbox" id="disc-ce" name="discipline" value="Civil Engineering" class="disc-check">
               <label for="disc-ce" class="disc-label">Civil Engineering</label>
             </div>
           </div>
           <div class="disc-option">
             <div class="disc-option-inner">
-              <input type="checkbox" id="disc-ls" name="discipline" value="Land Surveying" class="disc-check" form="contact-form">
+              <input type="checkbox" id="disc-ls" name="discipline" value="Land Surveying" class="disc-check">
               <label for="disc-ls" class="disc-label">Land Surveying</label>
             </div>
           </div>
           <div class="disc-option">
             <div class="disc-option-inner">
-              <input type="checkbox" id="disc-ns" name="discipline" value="Not sure yet" class="disc-check" form="contact-form">
+              <input type="checkbox" id="disc-ns" name="discipline" value="Not sure yet" class="disc-check">
               <label for="disc-ns" class="disc-label">Not sure yet</label>
             </div>
           </div>
@@ -140,7 +140,7 @@
       </div>
 
       <div class="contact-form-wrap">
-        <form class="contact-fields" id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+        <div class="contact-fields">
           <input type="hidden" name="form-name" value="contact">
           <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
 
@@ -173,14 +173,14 @@
             <p class="form-note">Prefer to call? <a href="tel:+17063421104" style="color:var(--blue);border-bottom:1px solid var(--line);">706-342-1104</a></p>
           </div>
           <p class="err-msg" id="form-err" style="display:none"></p>
-        </form>
+        </div>
 
         <div class="form-success" id="form-success" style="display:none">
           <strong>Thank you.</strong>
           Your message has been received. A member of our team will follow up. If your matter is urgent, call <a href="tel:+17063421104" style="color:var(--red);">706-342-1104</a>.
         </div>
       </div>
-    </div>
+    </form>
   </section>
 
   <div data-footer></div>
